@@ -35,6 +35,28 @@ export default function ArticleDetailPage() {
     const [detailedSummary, setDetailedSummary] = useState('');
     const [summarizing, setSummarizing] = useState(false);
     const [summaryError, setSummaryError] = useState('');
+    const [simpleSummary, setSimpleSummary] = useState('');
+    const [simplifying, setSimplifying] = useState(false);
+
+    const fetchSimpleSummary = async () => {
+        if (simpleSummary) return;
+        setSimplifying(true);
+        try {
+            const res = await fetch(`/api/articles/${article?.id}/simplify`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: detailedSummary || article?.content })
+            });
+            const data = await res.json();
+            if (data.success) {
+                setSimpleSummary(data.summary);
+            }
+        } catch (err) {
+            console.error('Simplify failed:', err);
+        } finally {
+            setSimplifying(false);
+        }
+    };
 
     useEffect(() => {
         async function loadArticle() {
@@ -615,6 +637,61 @@ export default function ArticleDetailPage() {
                 </div>
             </div>
 
+            {/* ─── SIMPLE SUMMARY ─── */}
+            <div style={{ marginBottom: '32px' }}>
+                {!simpleSummary && !simplifying ? (
+                    <button
+                        onClick={fetchSimpleSummary}
+                        style={{
+                            width: '100%', padding: '16px',
+                            borderRadius: '12px',
+                            background: 'linear-gradient(135deg, var(--glass-bg) 0%, rgba(139, 92, 246, 0.1) 100%)',
+                            border: '1px solid var(--glass-border)',
+                            color: '#8b5cf6', fontWeight: 600, fontSize: '0.95rem',
+                            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                            transition: 'all 0.2s ease',
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(139, 92, 246, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = 'none';
+                        }}
+                    >
+                        ✨ Explain Simply (Non-Expert Mode)
+                    </button>
+                ) : (
+                    <div style={{
+                        padding: '24px', borderRadius: '12px',
+                        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05))',
+                        border: '1px solid rgba(139, 92, 246, 0.2)',
+                        position: 'relative',
+                    }}>
+                        <div style={{
+                            position: 'absolute', top: '16px', right: '16px',
+                            fontSize: '3rem', opacity: 0.05, pointerEvents: 'none',
+                        }}>✨</div>
+
+                        <h4 style={{ margin: '0 0 12px', fontSize: '0.85rem', color: '#8b5cf6', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                            Simplified Explanation
+                        </h4>
+
+                        {simplifying ? (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-muted)' }}>
+                                <div className="loading-spinner" style={{ width: '16px', height: '16px', border: '2px solid rgba(139,92,246,0.3)', borderTopColor: '#8b5cf6' }} />
+                                <span>Translating to plain English...</span>
+                            </div>
+                        ) : (
+                            <p style={{ margin: 0, fontSize: '1.1rem', lineHeight: 1.6, color: 'var(--text-primary)', fontWeight: 500 }}>
+                                {simpleSummary}
+                            </p>
+                        )}
+                    </div>
+                )}
+            </div>
+
             {/* ─── TIMELINE (Generic) ─── */}
             {timelinePoints.length > 0 && (
                 <div style={{ marginBottom: '32px' }}>
@@ -698,7 +775,7 @@ export default function ArticleDetailPage() {
                 fontSize: '0.72rem', color: 'var(--text-muted)',
             }}>
                 <div>
-                    Classified by Gemini AI • {article.classifiedAt ? new Date(article.classifiedAt).toLocaleString() : '—'}
+                    Report by Groq AI • Classified by Gemini AI • {article.classifiedAt ? new Date(article.classifiedAt).toLocaleString() : '—'}
                     {' • '} Report ID: {article.id.slice(0, 8).toUpperCase()}
                 </div>
                 <a

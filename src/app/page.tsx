@@ -36,6 +36,7 @@ interface Article {
   tags: string[];
   entities: Record<string, string | null>;
   url: string;
+  imageUrl: string | null;
 }
 
 interface PipelineResult {
@@ -285,53 +286,63 @@ export default function DashboardPage() {
       {recentArticles.length > 0 ? (
         <div className="articles-grid">
           {recentArticles.map((article) => (
-            <a
+            <Link
               key={article.id}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/articles/${article.id}`}
               className="article-card"
             >
-              <div className="article-header">
-                <h3 className="article-title">{article.title}</h3>
-                <span className={`category-badge ${getCategoryClass(article.category)}`}>
-                  {getCategoryLabel(article.category)}
-                </span>
-              </div>
-              {article.aiSummary && (
-                <p className="article-summary">{article.aiSummary}</p>
+              {article.imageUrl ? (
+                <div className="article-image-wrapper">
+                  <img src={article.imageUrl} alt={article.title} loading="lazy" />
+                  <div className="image-overlay" />
+                </div>
+              ) : (
+                <div className="article-image-placeholder">
+                  {getCategoryLabel(article.category).split(' ')[0]}
+                </div>
               )}
-              <div className="article-meta">
-                <span className="meta-item">📡 {article.sourceName || 'Unknown'}</span>
-                {article.publishedAt && (
-                  <span className="meta-item">
-                    🕐 {new Date(article.publishedAt).toLocaleDateString('en-US', {
-                      month: 'short', day: 'numeric', year: 'numeric'
-                    })}
+              <div className="article-body">
+                <div className="article-header">
+                  <h3 className="article-title">{article.title}</h3>
+                  <span className={`category-badge ${getCategoryClass(article.category)}`}>
+                    {getCategoryLabel(article.category)}
                   </span>
+                </div>
+                {article.aiSummary && (
+                  <p className="article-summary">{article.aiSummary}</p>
                 )}
-                {article.aiConfidence && (
-                  <div className="confidence-meter">
-                    <div className="confidence-bar">
-                      <div
-                        className={`fill ${getConfidenceClass(article.aiConfidence)}`}
-                        style={{ width: `${article.aiConfidence * 100}%` }}
-                      />
-                    </div>
-                    <span className="confidence-value">
-                      {(article.aiConfidence * 100).toFixed(0)}%
+                <div className="article-meta">
+                  <span className="meta-item">📡 {article.sourceName || 'Unknown'}</span>
+                  {article.publishedAt && (
+                    <span className="meta-item">
+                      🕐 {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                        month: 'short', day: 'numeric', year: 'numeric'
+                      })}
                     </span>
+                  )}
+                  {article.aiConfidence && (
+                    <div className="confidence-meter">
+                      <div className="confidence-bar">
+                        <div
+                          className={`fill ${getConfidenceClass(article.aiConfidence)}`}
+                          style={{ width: `${article.aiConfidence * 100}%` }}
+                        />
+                      </div>
+                      <span className="confidence-value">
+                        {(article.aiConfidence * 100).toFixed(0)}%
+                      </span>
+                    </div>
+                  )}
+                </div>
+                {article.tags && article.tags.length > 0 && (
+                  <div className="article-tags">
+                    {article.tags.slice(0, 5).map((tag, i) => (
+                      <span key={i} className="tag">{tag}</span>
+                    ))}
                   </div>
                 )}
               </div>
-              {article.tags && article.tags.length > 0 && (
-                <div className="article-tags">
-                  {article.tags.slice(0, 5).map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
-                  ))}
-                </div>
-              )}
-            </a>
+            </Link>
           ))}
         </div>
       ) : (

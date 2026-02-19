@@ -14,6 +14,7 @@ interface AccidentArticle {
     tags: string[];
     entities: Record<string, string | null>;
     url: string;
+    imageUrl: string | null;
 }
 
 interface Pagination {
@@ -36,7 +37,7 @@ export default function AccidentsPage() {
     const [autoRefresh, setAutoRefresh] = useState(true);
     const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
     const [countdown, setCountdown] = useState(AUTO_REFRESH_MS / 1000);
-    const [windowInfo, setWindowInfo] = useState({ window: '', cutoff: '' });
+
     const [pipelineStatus, setPipelineStatus] = useState('');
     const [searchFetchResults, setSearchFetchResults] = useState<AccidentArticle[] | null>(null);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -54,7 +55,6 @@ export default function AccidentsPage() {
             if (data.success) {
                 setArticles(data.data);
                 setPagination(data.pagination);
-                setWindowInfo({ window: data.window, cutoff: data.cutoff });
             }
             setLastRefresh(new Date());
             setCountdown(AUTO_REFRESH_MS / 1000);
@@ -224,7 +224,7 @@ export default function AccidentsPage() {
                     <div>
                         <h1>🔴 Accidents &amp; Incidents</h1>
                         <p style={{ margin: '4px 0 0' }}>
-                            Real-time aviation accident intelligence — last {windowInfo.window || '15 days'} rolling window
+                            Real-time aviation accident intelligence
                         </p>
                     </div>
                     <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -262,7 +262,7 @@ export default function AccidentsPage() {
                 background: 'var(--glass-bg)', borderRadius: '8px', border: '1px solid var(--glass-border)',
                 fontSize: '0.8rem', color: 'var(--text-muted)', flexWrap: 'wrap', alignItems: 'center',
             }}>
-                <span>📊 <strong style={{ color: 'var(--text-primary)' }}>{pagination?.total || 0}</strong> accidents in window</span>
+                <span>📊 <strong style={{ color: 'var(--text-primary)' }}>{pagination?.total || 0}</strong> total accidents</span>
                 {showingSearchResults && (
                     <span style={{ color: '#8b5cf6', fontWeight: 600 }}>
                         🔍 Showing {searchFetchResults!.length} search results
@@ -339,55 +339,67 @@ export default function AccidentsPage() {
                                     className="article-card"
                                     style={{ textDecoration: 'none' }}
                                 >
-                                    <div className="article-header">
-                                        <h3 className="article-title">{article.title}</h3>
-                                        <span style={{
-                                            padding: '4px 10px', borderRadius: '12px', fontSize: '0.72rem',
-                                            fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase',
-                                            background: sevStyle.bg, color: sevStyle.color,
-                                            border: `1px solid ${sevStyle.color}30`,
-                                            whiteSpace: 'nowrap',
-                                        }}>
-                                            {sevStyle.icon} {article.severity}
-                                        </span>
-                                    </div>
-
-                                    {article.summary && (
-                                        <p className="article-summary">{article.summary}</p>
+                                    {article.imageUrl ? (
+                                        <div className="article-image-wrapper">
+                                            <img src={article.imageUrl} alt={article.title} loading="lazy" />
+                                            <div className="image-overlay" />
+                                        </div>
+                                    ) : (
+                                        <div className="article-image-placeholder">
+                                            {sevStyle.icon}
+                                        </div>
                                     )}
+                                    <div className="article-body">
+                                        <div className="article-header">
+                                            <h3 className="article-title">{article.title}</h3>
+                                            <span style={{
+                                                padding: '4px 10px', borderRadius: '12px', fontSize: '0.72rem',
+                                                fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase',
+                                                background: sevStyle.bg, color: sevStyle.color,
+                                                border: `1px solid ${sevStyle.color}30`,
+                                                whiteSpace: 'nowrap',
+                                            }}>
+                                                {sevStyle.icon} {article.severity}
+                                            </span>
+                                        </div>
 
-                                    <div className="article-meta">
-                                        <span className="meta-item">📡 {article.source}</span>
-                                        {article.entities?.airline && (
-                                            <span className="meta-item">✈️ {article.entities.airline}</span>
+                                        {article.summary && (
+                                            <p className="article-summary">{article.summary}</p>
                                         )}
-                                        {article.entities?.aircraft_type && (
-                                            <span className="meta-item">🛩️ {article.entities.aircraft_type}</span>
-                                        )}
-                                        {article.entities?.location && (
-                                            <span className="meta-item">📍 {article.entities.location}</span>
-                                        )}
-                                        <span className="meta-item">🕐 {formatTimeAgo(article.published_date)}</span>
-                                        {article.confidence > 0 && (
-                                            <div className="confidence-meter">
-                                                <div className="confidence-bar">
-                                                    <div
-                                                        className={`fill ${getConfidenceClass(article.confidence)}`}
-                                                        style={{ width: `${article.confidence * 100}%` }}
-                                                    />
+
+                                        <div className="article-meta">
+                                            <span className="meta-item">📡 {article.source}</span>
+                                            {article.entities?.airline && (
+                                                <span className="meta-item">✈️ {article.entities.airline}</span>
+                                            )}
+                                            {article.entities?.aircraft_type && (
+                                                <span className="meta-item">🛩️ {article.entities.aircraft_type}</span>
+                                            )}
+                                            {article.entities?.location && (
+                                                <span className="meta-item">📍 {article.entities.location}</span>
+                                            )}
+                                            <span className="meta-item">🕐 {formatTimeAgo(article.published_date)}</span>
+                                            {article.confidence > 0 && (
+                                                <div className="confidence-meter">
+                                                    <div className="confidence-bar">
+                                                        <div
+                                                            className={`fill ${getConfidenceClass(article.confidence)}`}
+                                                            style={{ width: `${article.confidence * 100}%` }}
+                                                        />
+                                                    </div>
+                                                    <span className="confidence-value">{(article.confidence * 100).toFixed(0)}%</span>
                                                 </div>
-                                                <span className="confidence-value">{(article.confidence * 100).toFixed(0)}%</span>
+                                            )}
+                                        </div>
+
+                                        {article.tags && article.tags.length > 0 && (
+                                            <div className="article-tags">
+                                                {article.tags.slice(0, 6).map((tag, i) => (
+                                                    <span key={i} className="tag">{tag}</span>
+                                                ))}
                                             </div>
                                         )}
                                     </div>
-
-                                    {article.tags && article.tags.length > 0 && (
-                                        <div className="article-tags">
-                                            {article.tags.slice(0, 6).map((tag, i) => (
-                                                <span key={i} className="tag">{tag}</span>
-                                            ))}
-                                        </div>
-                                    )}
                                 </Link>
                             );
                         })}
@@ -419,12 +431,12 @@ export default function AccidentsPage() {
             ) : (
                 <div className="empty-state">
                     <div className="empty-icon">{ingesting ? '⏳' : '🔴'}</div>
-                    <h3>{ingesting ? 'Fetching accident reports...' : (search ? `No results for "${search}"` : 'No accident reports in the last 15 days')}</h3>
+                    <h3>{ingesting ? 'Fetching accident reports...' : (search ? `No results for "${search}"` : 'No accident reports found')}</h3>
                     <p>{ingesting
                         ? 'The pipeline is fetching from RSS feeds and classifying with AI. This may take a moment...'
                         : search
                             ? `No aviation accidents matching "${search}" were found in the database. Click below to search live news sources.`
-                            : 'No aviation accidents or incidents were found in the 15-day window. Click Refresh to check again.'
+                            : 'No aviation accidents or incidents were found. Click Refresh to check again.'
                     }</p>
                     {!ingesting && (
                         <button

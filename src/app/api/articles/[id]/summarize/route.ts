@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 
 const SUMMARIZE_PROMPT = `You are an expert Aviation Journalist AI. You are given the title, source snippet, and scraped web content of an aviation news article.
 
@@ -76,16 +76,16 @@ export async function POST(
 ) {
     try {
         const { id } = await params;
-        const apiKey = process.env.GEMINI_API_KEY;
+        const apiKey = process.env.GROQ_API_KEY;
 
         console.log(`[Summarize] API Triggered for ID: ${id}`);
 
-        if (!apiKey || apiKey.includes('AIzaSy')) {
-            if (!apiKey) console.error('[Summarize] Missing GEMINI_API_KEY');
-            // If it's a placeholder or missing, return specific error
-            if (apiKey && apiKey.includes('AIzaSyBbfQ')) {
-                console.error('[Summarize] Detected potential placeholder API key');
-            }
+        if (!apiKey) {
+            console.error('[Summarize] Missing GROQ_API_KEY');
+            return NextResponse.json(
+                { success: false, error: 'Server configuration error: Missing AI API key' },
+                { status: 500 }
+            );
         }
 
         const article = await prisma.article.findUnique({ where: { id } });
@@ -131,25 +131,27 @@ export async function POST(
             });
         }
 
-        // Step 2: Generate detailed summary with Gemini
-        console.log(`[Summarize] Invoking Gemini for: ${article.title.slice(0, 50)}... (${allContent.length} chars of context)`);
+        // Step 2: Generate detailed summary with Groq (LLaMA 3)
+        console.log(`[Summarize] Invoking Groq (LLaMA 3) for: ${article.title.slice(0, 50)}... (${allContent.length} chars of context)`);
 
-        if (!apiKey) throw new Error('GEMINI_API_KEY is not set');
-
-        const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const groq = new Groq({ apiKey });
 
         const prompt = SUMMARIZE_PROMPT
             .replace('{TITLE}', article.title)
             .replace('{SOURCE}', article.sourceName || 'Unknown')
-            .replace('{CONTENT}', allContent.slice(0, 6000));
+            .replace('{CONTENT}', allContent.slice(0, 12000)); // Groq/LLaMA 3 has larger context window
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const summary = response.text().trim();
+        const completion = await groq.chat.completions.create({
+            messages: [{ role: 'user', content: prompt }],
+            model: 'llama-3.3-70b-versatile',
+            temperature: 0.5,
+            max_tokens: 1024,
+        });
+
+        const summary = completion.choices[0]?.message?.content?.trim();
 
         if (!summary || summary.length < 100) {
-            console.error('[Summarize] Gemini returned an empty or insufficient summary.');
+            console.error('[Summarize] Groq returned an empty or insufficient summary.');
             return NextResponse.json({
                 success: false,
                 error: 'AI failed to generate a comprehensive summary. Please try again.',

@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
-const ROLLING_WINDOW_DAYS = 15;
-
 export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
@@ -10,16 +8,9 @@ export async function GET(request: NextRequest) {
         const limit = Math.min(100, Math.max(1, parseInt(searchParams.get('limit') || '20')));
         const search = searchParams.get('search') || '';
 
-        // 15-day rolling window — only show recent accidents
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - ROLLING_WINDOW_DAYS);
-
         const where: Record<string, unknown> = {
             status: 'classified',
             category: 'ACCIDENT_INCIDENT',
-            publishedAt: {
-                gte: cutoffDate,
-            },
         };
 
         if (search) {
@@ -46,6 +37,7 @@ export async function GET(request: NextRequest) {
                     tags: true,
                     entities: true,
                     url: true,
+                    imageUrl: true,
                     category: true,
                     createdAt: true,
                 },
@@ -68,14 +60,13 @@ export async function GET(request: NextRequest) {
                 tags,
                 entities,
                 url: a.url,
+                imageUrl: a.imageUrl || null,
             };
         });
 
         return NextResponse.json({
             success: true,
             count: total,
-            window: `${ROLLING_WINDOW_DAYS} days`,
-            cutoff: cutoffDate.toISOString(),
             data,
             pagination: {
                 page,
