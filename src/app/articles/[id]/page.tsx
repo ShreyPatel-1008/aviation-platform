@@ -571,7 +571,7 @@ export default function ArticleDetailPage() {
                     {article.aiSummary && <ExecutiveIntelligence article={article} />}
                 </div>
                 <div style={{ flex: '1 1 250px', minWidth: '0' }}>
-                    <KeyDetails article={article} />
+                    <KeyDetails entities={article.entities} />
                 </div>
             </div>
 
