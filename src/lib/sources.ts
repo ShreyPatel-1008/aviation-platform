@@ -24,6 +24,7 @@ export interface ClassifiedArticle {
         severity: string | null;
     };
     tags: string[];
+    key_points?: string[];
 }
 
 export interface SourceConfig {

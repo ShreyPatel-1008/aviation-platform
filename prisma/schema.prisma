@@ -25,6 +25,7 @@ model Article {
   category      String   @default("UNCLASSIFIED")
   aiSummary     String?
   aiConfidence  Float?
+  keyPoints     String?  // JSON array stored as string
   tags          String?  // JSON array stored as string
   entities      String?  // JSON object stored as string
 

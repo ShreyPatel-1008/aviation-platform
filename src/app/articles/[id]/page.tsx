@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import ExecutiveIntelligence from '@/components/ExecutiveIntelligence';
+import KeyDetails from '@/components/KeyDetails';
 
 interface ArticleDetail {
     id: string;
@@ -20,6 +22,7 @@ interface ArticleDetail {
     aiConfidence: number | null;
     tags: string[];
     entities: Record<string, string | null>;
+    keyPoints: string[];
     status: string;
     classifiedAt: string | null;
     createdAt: string;
@@ -64,7 +67,20 @@ export default function ArticleDetailPage() {
                 const res = await fetch(`/api/articles/${params.id}`);
                 const data = await res.json();
                 if (data.success) {
-                    setArticle(data.article);
+                    // Parse keyPoints if it's a string (from DB)
+                    let parsedKeyPoints: string[] = [];
+                    if (data.article.keyPoints) {
+                        try {
+                            parsedKeyPoints = typeof data.article.keyPoints === 'string'
+                                ? JSON.parse(data.article.keyPoints)
+                                : data.article.keyPoints;
+                        } catch (e) {
+                            console.error('Failed to parse keyPoints');
+                        }
+                    }
+
+                    const articleData = { ...data.article, keyPoints: parsedKeyPoints };
+                    setArticle(articleData);
 
                     // If content already exists and is detailed (cached), show it
                     if (data.article.content && data.article.content.length > 500) {
@@ -548,24 +564,16 @@ export default function ArticleDetailPage() {
                 </div>
             )}
 
-            {/* ─── EXECUTIVE INTELLIGENCE ─── */}
-            {article.aiSummary && (
-                <div style={{ marginBottom: '32px' }}>
-                    <SectionHeader icon="✨" label="EXECUTIVE INTELLIGENCE" color="#f59e0b" />
-                    <div style={{
-                        padding: '28px 32px', borderRadius: '12px',
-                        background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(139, 92, 246, 0.04))',
-                        border: '1px solid rgba(245, 158, 11, 0.15)',
-                    }}>
-                        <p style={{
-                            margin: 0, fontSize: '1.05rem', lineHeight: 1.8,
-                            color: 'var(--text-secondary)', fontStyle: 'italic', fontWeight: 500,
-                        }}>
-                            &ldquo;{article.aiSummary}&rdquo;
-                        </p>
-                    </div>
+
+            {/* ─── INTELLIGENCE GRID ─── */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px', alignItems: 'start' }}>
+                <div style={{ flex: '2 1 500px', minWidth: '0' }}>
+                    {article.aiSummary && <ExecutiveIntelligence article={article} />}
                 </div>
-            )}
+                <div style={{ flex: '1 1 250px', minWidth: '0' }}>
+                    <KeyDetails article={article} />
+                </div>
+            </div>
 
             {/* ─── DETAILED ARTICLE ─── */}
             <div style={{ marginBottom: '32px' }}>

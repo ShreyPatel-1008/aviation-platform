@@ -100,6 +100,7 @@ export async function runPipeline(triggeredBy: string = 'manual'): Promise<Pipel
                                 aiConfidence: classification.confidence,
                                 tags: JSON.stringify(classification.tags),
                                 entities: JSON.stringify(classification.entities),
+                                keyPoints: classification.key_points ? JSON.stringify(classification.key_points) : null,
                                 status: 'classified',
                                 classifiedAt: new Date(),
                                 retryCount: attempt,

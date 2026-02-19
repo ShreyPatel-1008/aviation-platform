@@ -34,7 +34,8 @@ RESPOND WITH ONLY THIS JSON:
     "authority": "FAA | ICAO | EASA | DGCA | other | null",
     "severity": "minor | serious | fatal | unknown | null"
   },
-  "tags": ["tag1", "tag2", "tag3"]
+  "tags": ["tag1", "tag2", "tag3"],
+  "key_points": ["Insight 1", "Insight 2", "Insight 3"]
 }`;
 
 export async function classifyArticle(
@@ -125,5 +126,6 @@ function fallbackClassify(title: string, content: string): ClassifiedArticle {
             severity: null,
         },
         tags: category === 'GENERAL' ? ['aviation', 'news'] : [category.toLowerCase().replace('_', ' '), 'aviation'],
+        key_points: [],
     };
 }
