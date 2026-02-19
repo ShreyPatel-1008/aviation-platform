@@ -566,7 +566,7 @@ export default function ArticleDetailPage() {
 
 
             {/* ─── INTELLIGENCE GRID ─── */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px', alignItems: 'start' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px' }}>
                 <div style={{ flex: '2 1 500px', minWidth: '0' }}>
                     {article.aiSummary && <ExecutiveIntelligence article={article} />}
                 </div>

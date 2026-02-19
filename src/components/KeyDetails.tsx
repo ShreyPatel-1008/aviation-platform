@@ -45,6 +45,9 @@ export default function KeyDetails({ entities }: KeyDetailsProps) {
     const formattedDate = formatDate(data.date);
     const severityLower = data.severity?.toLowerCase() || 'unknown';
 
+    // Check if any data exists
+    const hasData = Object.values({ ...data, formattedDate }).some(val => val !== null && val !== undefined && val !== '');
+
     // Helper for rendering items if value exists
     const renderItem = (label: string, icon: string, value: string | null | undefined, isSeverity = false) => {
         if (!value) return null;
@@ -69,6 +72,11 @@ export default function KeyDetails({ entities }: KeyDetailsProps) {
             </h3>
 
             <div className="details-list">
+                {!hasData && (
+                    <div style={{ color: '#94a3b8', fontStyle: 'italic', fontSize: '0.9rem', padding: '8px 0' }}>
+                        No key details available.
+                    </div>
+                )}
                 {renderItem('AIRLINE', '✈️', data.airline)}
                 {renderItem('AIRCRAFT', '🛩', data.aircraftType)}
                 {renderItem('REGISTRATION', '🔖', data.registration)}
