@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Article {
+  id            String   @id @default(uuid())
+  title         String
+  content       String?
+  description   String?
+  url           String   @unique
+  urlHash       String   @unique
+  sourceName    String?
+  sourceUrl     String?
+  author        String?
+  imageUrl      String?
+  publishedAt   DateTime?
+  fetchedAt     DateTime @default(now())
+
+  // AI Classification
+  category      String   @default("UNCLASSIFIED")
+  aiSummary     String?
+  aiConfidence  Float?
+  tags          String?  // JSON array stored as string
+  entities      String?  // JSON object stored as string
+
+  // Processing
+  status        String   @default("pending")
+  retryCount    Int      @default(0)
+  errorMessage  String?
+  classifiedAt  DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category])
+  @@index([status])
+  @@index([publishedAt])
+  @@index([sourceName])
+}
+
+model IngestionLog {
+  id          String   @id @default(uuid())
+  source      String   @default("pipeline")
+  fetched     Int      @default(0)
+  newArticles Int      @default(0)
+  classified  Int      @default(0)
+  failed      Int      @default(0)
+  errors      String?  // JSON array stored as string
+  durationMs  Int      @default(0)
+  triggeredBy String   @default("manual") // "manual" | "cron" | "api"
+  createdAt   DateTime @default(now())
+}
