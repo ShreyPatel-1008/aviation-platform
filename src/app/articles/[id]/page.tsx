@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
 import ExecutiveIntelligence from '@/components/ExecutiveIntelligence';
-import KeyDetails from '@/components/KeyDetails';
 
 interface ArticleDetail {
     id: string;
@@ -22,7 +20,8 @@ interface ArticleDetail {
     aiConfidence: number | null;
     tags: string[];
     entities: Record<string, string | null>;
-    keyPoints: string[];
+    keyInsights: string[];
+    severity: string | null;
     status: string;
     classifiedAt: string | null;
     createdAt: string;
@@ -67,20 +66,7 @@ export default function ArticleDetailPage() {
                 const res = await fetch(`/api/articles/${params.id}`);
                 const data = await res.json();
                 if (data.success) {
-                    // Parse keyPoints if it's a string (from DB)
-                    let parsedKeyPoints: string[] = [];
-                    if (data.article.keyPoints) {
-                        try {
-                            parsedKeyPoints = typeof data.article.keyPoints === 'string'
-                                ? JSON.parse(data.article.keyPoints)
-                                : data.article.keyPoints;
-                        } catch (e) {
-                            console.error('Failed to parse keyPoints');
-                        }
-                    }
-
-                    const articleData = { ...data.article, keyPoints: parsedKeyPoints };
-                    setArticle(articleData);
+                    setArticle(data.article);
 
                     // If content already exists and is detailed (cached), show it
                     if (data.article.content && data.article.content.length > 500) {
@@ -564,16 +550,8 @@ export default function ArticleDetailPage() {
                 </div>
             )}
 
-
-            {/* ─── INTELLIGENCE GRID ─── */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px' }}>
-                <div style={{ flex: '2 1 500px', minWidth: '0' }}>
-                    {article.aiSummary && <ExecutiveIntelligence article={article} />}
-                </div>
-                <div style={{ flex: '1 1 250px', minWidth: '0' }}>
-                    <KeyDetails entities={article.entities} />
-                </div>
-            </div>
+            {/* ─── EXECUTIVE INTELLIGENCE ─── */}
+            <ExecutiveIntelligence article={article as any} />
 
             {/* ─── DETAILED ARTICLE ─── */}
             <div style={{ marginBottom: '32px' }}>

@@ -8,7 +8,7 @@ const navItems = [
     { href: '/accidents', icon: '🔴', label: 'Accidents & Incidents' },
     { href: '/trades', icon: '💼', label: 'Aviation Trades' },
     { href: '/regulations', icon: '📜', label: 'Regulations' },
-    { href: '/radar', icon: '🛩️', label: 'Flight Radar' },
+    { href: '/aircraft', icon: '✈️', label: 'Aircraft Encyclopedia' },
 ];
 
 export default function Sidebar() {

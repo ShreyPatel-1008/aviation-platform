@@ -24,6 +24,7 @@ export async function GET(
             ...article,
             tags: article.tags ? JSON.parse(article.tags) : [],
             entities: article.entities ? JSON.parse(article.entities) : {},
+            keyInsights: article.keyInsights ? JSON.parse(article.keyInsights) : [],
         };
 
         return NextResponse.json({ success: true, article: formatted });

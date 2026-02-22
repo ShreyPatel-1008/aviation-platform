@@ -14,6 +14,7 @@ export interface ClassifiedArticle {
     category: 'ACCIDENT_INCIDENT' | 'AVIATION_TRADE' | 'REGULATION' | 'GENERAL';
     confidence: number;
     summary: string;
+    keyInsights: string[];
     entities: {
         airline: string | null;
         aircraft_type: string | null;
@@ -24,7 +25,6 @@ export interface ClassifiedArticle {
         severity: string | null;
     };
     tags: string[];
-    key_points?: string[];
 }
 
 export interface SourceConfig {

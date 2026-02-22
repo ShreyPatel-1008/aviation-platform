@@ -278,7 +278,7 @@ export default function DashboardPage() {
       {/* Recent Articles */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', marginTop: '32px' }}>
         <h2 style={{ fontSize: '1.3rem', fontWeight: 700 }}>Recent Articles</h2>
-        <Link href="/accidents" className="btn btn-ghost" style={{ fontSize: '0.85rem' }}>
+        <Link href="/articles" className="btn btn-ghost" style={{ fontSize: '0.85rem' }}>
           View All →
         </Link>
       </div>

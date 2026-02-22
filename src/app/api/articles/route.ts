@@ -13,6 +13,8 @@ export async function GET(request: NextRequest) {
         const tagsFilter = searchParams.get('tags') || '';
         const category = searchParams.get('category') || '';
 
+        const sort = searchParams.get('sort') || 'newest';
+
         const where: Record<string, unknown> = {
             status: 'classified',
         };
@@ -26,6 +28,8 @@ export async function GET(request: NextRequest) {
                 { title: { contains: search } },
                 { description: { contains: search } },
                 { aiSummary: { contains: search } },
+                { content: { contains: search } }, // Added content search
+                { tags: { contains: search } },    // Added tags search
             ];
         }
 
@@ -45,10 +49,19 @@ export async function GET(request: NextRequest) {
             where.tags = { contains: tagsFilter };
         }
 
+        // Determine sort order
+        let orderBy: Record<string, string> = { publishedAt: 'desc' };
+        if (sort === 'oldest') {
+            orderBy = { publishedAt: 'asc' };
+        } else if (sort === 'newest') {
+            orderBy = { publishedAt: 'desc' };
+        }
+        // 'relevance' is tricky with just 'contains', defaulting to newest for now unless we do raw SQL
+
         const [articles, total] = await Promise.all([
             prisma.article.findMany({
                 where,
-                orderBy: { publishedAt: 'desc' },
+                orderBy,
                 skip: (page - 1) * limit,
                 take: limit,
             }),

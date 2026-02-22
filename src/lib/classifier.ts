@@ -1,42 +1,49 @@
+
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { ClassifiedArticle } from './sources';
 
-const CLASSIFICATION_PROMPT = `You are an expert Aviation Intelligence AI Agent. Classify this aviation news article into exactly one category with high accuracy.
+const CLASSIFICATION_PROMPT = `You are an expert Aviation Intelligence AI Agent.Classify this aviation news article into exactly one category with high accuracy.
+ALSO EXTRACT KEY EXECUTIVE INSIGHTS AND RISK LEVEL.
 
-CATEGORIES:
-- ACCIDENT_INCIDENT: Any aviation crash, accident, emergency landing, near-miss, runway excursion, bird strike, hull loss, or safety-related incident.
+    CATEGORIES:
+- ACCIDENT_INCIDENT: Any aviation crash, accident, emergency landing, near - miss, runway excursion, bird strike, hull loss, or safety - related incident.
 - AVIATION_TRADE: Any news about aircraft purchase, sale, lease, delivery, fleet orders, MRO contracts, aviation finance, or business deals.
-- REGULATION: Any new rule, amendment, airworthiness directive (AD), NOTAM, safety bulletin, or policy update by ICAO, FAA, EASA, DGCA, or any aviation authority.
+- REGULATION: Any new rule, amendment, airworthiness directive(AD), NOTAM, safety bulletin, or policy update by ICAO, FAA, EASA, DGCA, or any aviation authority.
 - GENERAL: Aviation news that does not clearly fit the above three categories.
 
 STRICT RULES:
-- Respond ONLY with valid JSON. No markdown, no explanation, no extra text.
+- Respond ONLY with valid JSON.No markdown, no explanation, no extra text.
 - Base classification on content, not source name.
 - Never hallucinate facts — only extract entities explicitly stated.
 - If content is too short to classify, set confidence below 0.50.
 
-INPUT:
-Title: {TITLE}
-Source: {SOURCE}
-Content: {CONTENT}
+    INPUT:
+Title: { TITLE }
+Source: { SOURCE }
+Content: { CONTENT }
 
 RESPOND WITH ONLY THIS JSON:
 {
-  "category": "ACCIDENT_INCIDENT | AVIATION_TRADE | REGULATION | GENERAL",
-  "confidence": 0.95,
-  "summary": "First factual sentence. Second factual sentence.",
-  "entities": {
-    "airline": "string or null",
-    "aircraft_type": "string or null",
-    "registration": "string or null",
-    "location": "string or null",
-    "event_date": "YYYY-MM-DD or null",
-    "authority": "FAA | ICAO | EASA | DGCA | other | null",
-    "severity": "minor | serious | fatal | unknown | null"
-  },
-  "tags": ["tag1", "tag2", "tag3"],
-  "key_points": ["Insight 1", "Insight 2", "Insight 3"]
-}`;
+    "category": "ACCIDENT_INCIDENT | AVIATION_TRADE | REGULATION | GENERAL",
+        "confidence": 0.95,
+            "summary": "Concise 3-sentence summary of the entire article context, capturing the main event and its implications. DO NOT just repeat the title.",
+                "keyInsights": [
+                    "Critical takeaway 1 (e.g. 'FAA investigation launched')",
+                    "Critical takeaway 2 (e.g. 'Flight ops suspended')",
+                    "Critical takeaway 3",
+                    "Critical takeaway 4"
+                ],
+                    "entities": {
+        "airline": "string or null",
+            "aircraft_type": "string or null",
+                "registration": "string or null",
+                    "location": "string or null",
+                        "event_date": "YYYY-MM-DD or null",
+                            "authority": "FAA | ICAO | EASA | DGCA | other | null",
+                                "severity": "minor | serious | fatal | unknown | null"
+    },
+    "tags": ["tag1", "tag2", "tag3"]
+} `;
 
 export async function classifyArticle(
     title: string,
@@ -57,7 +64,7 @@ export async function classifyArticle(
         const prompt = CLASSIFICATION_PROMPT
             .replace('{TITLE}', title)
             .replace('{SOURCE}', source)
-            .replace('{CONTENT}', (content || '').slice(0, 2000));
+            .replace('{CONTENT}', (content || '').slice(0, 3000));
 
         const result = await model.generateContent(prompt);
         const responseText = result.response.text();
@@ -69,7 +76,7 @@ export async function classifyArticle(
             return fallbackClassify(title, content);
         }
 
-        const parsed = JSON.parse(jsonMatch[0]) as ClassifiedArticle;
+        const parsed = JSON.parse(jsonMatch[0]);
 
         // Validate category
         const validCategories = ['ACCIDENT_INCIDENT', 'AVIATION_TRADE', 'REGULATION', 'GENERAL'];
@@ -80,7 +87,15 @@ export async function classifyArticle(
         // Clamp confidence
         parsed.confidence = Math.max(0, Math.min(1, parsed.confidence || 0.5));
 
-        return parsed;
+        // Ensure new fields exist
+        if (!Array.isArray(parsed.keyInsights)) parsed.keyInsights = [];
+
+        // Map extracted severity to top-level if present in entities
+        if (parsed.entities?.severity) {
+            // Keep it in entities, but consumption layer can use it
+        }
+
+        return parsed as ClassifiedArticle;
     } catch (error) {
         console.error('[Classifier] AI classification failed:', error instanceof Error ? error.message : error);
         return fallbackClassify(title, content);
@@ -88,7 +103,7 @@ export async function classifyArticle(
 }
 
 function fallbackClassify(title: string, content: string): ClassifiedArticle {
-    const text = `${title} ${content}`.toLowerCase();
+    const text = `${title} ${content} `.toLowerCase();
 
     const accidentWords = ['crash', 'accident', 'emergency landing', 'incident', 'bird strike', 'runway excursion', 'hull loss', 'fatalities', 'injured', 'wreckage'];
     const tradeWords = ['order', 'delivery', 'purchase', 'lease', 'fleet', 'mro', 'deal', 'contract', 'billion', 'acquisition'];
@@ -115,7 +130,8 @@ function fallbackClassify(title: string, content: string): ClassifiedArticle {
     return {
         category,
         confidence,
-        summary: title.length > 100 ? `${title.slice(0, 100)}...` : title,
+        summary: (content && content.length > 50) ? `${content.slice(0, 250)}...` : (title.length > 100 ? `${title.slice(0, 100)}...` : title),
+        keyInsights: [],
         entities: {
             airline: null,
             aircraft_type: null,
@@ -126,6 +142,5 @@ function fallbackClassify(title: string, content: string): ClassifiedArticle {
             severity: null,
         },
         tags: category === 'GENERAL' ? ['aviation', 'news'] : [category.toLowerCase().replace('_', ' '), 'aviation'],
-        key_points: [],
     };
 }
