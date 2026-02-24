@@ -8,6 +8,7 @@ const navItems = [
     { href: '/accidents', icon: '🔴', label: 'Accidents & Incidents' },
     { href: '/trades', icon: '💼', label: 'Aviation Trades' },
     { href: '/regulations', icon: '📜', label: 'Regulations' },
+    { href: '/wiki-news', icon: '🌍', label: 'Wikipedia News' },
     { href: '/aircraft', icon: '✈️', label: 'Aircraft Encyclopedia' },
 ];
 
