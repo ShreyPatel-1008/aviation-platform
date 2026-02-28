@@ -57,3 +57,43 @@ model IngestionLog {
   triggeredBy String   @default("manual") // "manual" | "cron" | "api"
   createdAt   DateTime @default(now())
 }
+
+/// Aircraft / fleet data models
+model AircraftType {
+  id       Int     @id @default(autoincrement())
+  name     String
+  iataCode String?
+  icaoCode String?
+
+  fleets AirlineFleet[]
+}
+
+model Airline {
+  id         Int    @id @default(autoincrement())
+  parentName String?
+  name       String
+
+  fleets AirlineFleet[]
+
+  @@unique([name])
+}
+
+model AirlineFleet {
+  id Int @id @default(autoincrement())
+
+  airline   Airline      @relation(fields: [airlineId], references: [id])
+  airlineId Int
+
+  aircraftType   AircraftType? @relation(fields: [aircraftTypeId], references: [id])
+  aircraftTypeId Int?
+
+  aircraftTypeRaw  String
+  current          Int?
+  future           Int?
+  historic         Int?
+  total            Int?
+  orders           Int?
+  unitCost         Float?
+  totalCostCurrent Float?
+  averageAge       Float?
+}

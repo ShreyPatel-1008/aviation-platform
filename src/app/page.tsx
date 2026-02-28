@@ -67,7 +67,7 @@ export default function DashboardPage() {
     try {
       const [statsRes, articlesRes, cronRes] = await Promise.all([
         fetch('/api/articles/stats'),
-        fetch('/api/articles?limit=5'),
+        fetch('/api/articles?limit=9'),
         fetch('/api/cron'),
       ]);
       const statsData = await statsRes.json();
@@ -128,6 +128,10 @@ export default function DashboardPage() {
     return 'low';
   };
 
+  const featuredArticle = recentArticles[0] || null;
+  const trendingArticles = recentArticles.slice(1, 4);
+  const gridArticles = recentArticles.slice(4);
+
   if (loading) {
     return (
       <div className="loading-container">
@@ -139,10 +143,11 @@ export default function DashboardPage() {
 
   return (
     <div>
+      {/* Page header */}
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div>
-          <h1>Command Center</h1>
-          <p>Real-time aviation intelligence at your fingertips</p>
+          <h1>AviationIQ Dashboard</h1>
+          <p>Premium aviation intelligence — news, fleets and risks in one view.</p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           {/* Scheduler Status Badge */}
@@ -208,70 +213,97 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Stats Cards */}
-      <div className="stats-grid" style={{ marginTop: pipelineResult ? '24px' : '0' }}>
-        <div className="stat-card blue">
-          <div className="stat-icon">📰</div>
-          <div className="stat-value">{stats?.total || 0}</div>
-          <div className="stat-label">Total Articles</div>
-        </div>
-        <div className="stat-card red">
-          <div className="stat-icon">🔴</div>
-          <div className="stat-value">{stats?.accidents || 0}</div>
-          <div className="stat-label">Accidents & Incidents</div>
-        </div>
-        <div className="stat-card green">
-          <div className="stat-icon">💼</div>
-          <div className="stat-value">{stats?.trades || 0}</div>
-          <div className="stat-label">Aviation Trades</div>
-        </div>
-        <div className="stat-card purple">
-          <div className="stat-icon">📜</div>
-          <div className="stat-value">{stats?.regulations || 0}</div>
-          <div className="stat-label">Regulations</div>
-        </div>
-        <div className="stat-card amber">
-          <div className="stat-icon">⏳</div>
-          <div className="stat-value">{stats?.pending || 0}</div>
-          <div className="stat-label">Pending Classification</div>
-        </div>
-      </div>
+      {/* Hero layout: Featured + Trending */}
+      {featuredArticle && (
+        <div className="aviationiq-main-grid">
+          {/* Featured article */}
+          <Link href={`/articles/${featuredArticle.id}`} className="featured-article-card">
+            <div className="featured-image-wrapper">
+              {featuredArticle.imageUrl ? (
+                <img src={featuredArticle.imageUrl} alt={featuredArticle.title} loading="lazy" />
+              ) : (
+                <div className="featured-image-placeholder">✈️</div>
+              )}
+              <div className="featured-gradient" />
+              <div className="featured-category-pill">AVIATION</div>
+            </div>
+            <div className="featured-body">
+              <h2 className="featured-title">{featuredArticle.title}</h2>
+              {featuredArticle.aiSummary && (
+                <p className="featured-summary">
+                  {featuredArticle.aiSummary.length > 220
+                    ? `${featuredArticle.aiSummary.slice(0, 220)}…`
+                    : featuredArticle.aiSummary}
+                </p>
+              )}
+              <div className="featured-meta-row">
+                <span className="meta-item">📡 {featuredArticle.sourceName || 'Unknown source'}</span>
+                {featuredArticle.publishedAt && (
+                  <span className="meta-item">
+                    🕒 {new Date(featuredArticle.publishedAt).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </span>
+                )}
+                <span className="meta-item">⏱ 4 min read</span>
+              </div>
+              {featuredArticle.tags && featuredArticle.tags.length > 0 && (
+                <div className="featured-tags">
+                  {featuredArticle.tags.slice(0, 3).map((tag, i) => (
+                    <span key={i} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Link>
 
-      {/* Observability Banner */}
-      {stats && (
-        <div style={{
-          display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap',
-        }}>
-          <div style={{
-            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
-            background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
-          }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{stats.last24h}</div>
-            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Last 24 Hours</div>
-          </div>
-          <div style={{
-            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
-            background: stats.failed > 0 ? 'rgba(239,68,68,0.08)' : 'rgba(52,211,153,0.08)',
-            border: `1px solid ${stats.failed > 0 ? 'rgba(239,68,68,0.15)' : 'rgba(52,211,153,0.15)'}`,
-          }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: stats.failed > 0 ? 'var(--accent-red, #ef4444)' : 'var(--accent-green, #34d399)' }}>
-              {stats.failed}
+          {/* Trending list */}
+          <div className="trending-card">
+            <div className="trending-header">
+              <h3>Trending Now</h3>
+              <Link href="/articles" className="trending-view-all">
+                View All →
+              </Link>
             </div>
-            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Failed</div>
-          </div>
-          {stats.lastIngestion && (
-            <div style={{
-              flex: '2 1 250px', padding: '14px 18px', borderRadius: '12px',
-              background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
-            }}>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-                Last Ingestion: {new Date(stats.lastIngestion.timestamp).toLocaleString()}
-              </div>
-              <div style={{ fontSize: '0.75rem', opacity: 0.7, marginTop: '4px' }}>
-                {stats.lastIngestion.triggeredBy} · {stats.lastIngestion.fetched} fetched → {stats.lastIngestion.classified} classified · {stats.lastIngestion.durationMs}ms
-              </div>
+            <div className="trending-list">
+              {trendingArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/articles/${article.id}`}
+                  className="trending-item"
+                >
+                  <div className="trending-thumb">
+                    {article.imageUrl ? (
+                      <img src={article.imageUrl} alt={article.title} loading="lazy" />
+                    ) : (
+                      <div className="trending-thumb-placeholder">✈️</div>
+                    )}
+                  </div>
+                  <div className="trending-content">
+                    <div className="trending-title">{article.title}</div>
+                    <div className="trending-meta">
+                      <span>{article.sourceName || 'Unknown'}</span>
+                      {article.publishedAt && (
+                        <span>
+                          {new Date(article.publishedAt).toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: '2-digit',
+                          })}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              {trendingArticles.length === 0 && (
+                <div className="trending-empty">More articles will appear here as they are ingested.</div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       )}
 
@@ -283,9 +315,9 @@ export default function DashboardPage() {
         </Link>
       </div>
 
-      {recentArticles.length > 0 ? (
+      {gridArticles.length > 0 ? (
         <div className="articles-grid">
-          {recentArticles.map((article) => (
+          {gridArticles.map((article) => (
             <Link
               key={article.id}
               href={`/articles/${article.id}`}
@@ -348,8 +380,75 @@ export default function DashboardPage() {
       ) : (
         <div className="empty-state">
           <div className="empty-icon">🛫</div>
-          <h3>No articles yet</h3>
-          <p>Click &quot;Fetch &amp; Classify&quot; to start ingesting aviation news from global sources.</p>
+          <h3>No additional recent articles</h3>
+          <p>Ingest more news to fill out the grid below the featured and trending stories.</p>
+        </div>
+      )}
+
+      {/* Stats Cards (moved below Recent, above Sources) */}
+      <div className="stats-grid" style={{ marginTop: '32px' }}>
+        <div className="stat-card blue">
+          <div className="stat-icon">📰</div>
+          <div className="stat-value">{stats?.total || 0}</div>
+          <div className="stat-label">Total Articles</div>
+        </div>
+        <div className="stat-card red">
+          <div className="stat-icon">🔴</div>
+          <div className="stat-value">{stats?.accidents || 0}</div>
+          <div className="stat-label">Accidents & Incidents</div>
+        </div>
+        <div className="stat-card green">
+          <div className="stat-icon">💼</div>
+          <div className="stat-value">{stats?.trades || 0}</div>
+          <div className="stat-label">Aviation Trades</div>
+        </div>
+        <div className="stat-card purple">
+          <div className="stat-icon">📜</div>
+          <div className="stat-value">{stats?.regulations || 0}</div>
+          <div className="stat-label">Regulations</div>
+        </div>
+        <div className="stat-card amber">
+          <div className="stat-icon">⏳</div>
+          <div className="stat-value">{stats?.pending || 0}</div>
+          <div className="stat-label">Pending Classification</div>
+        </div>
+      </div>
+
+      {/* Observability Banner */}
+      {stats && (
+        <div style={{
+          display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap',
+        }}>
+          <div style={{
+            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
+            background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
+          }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{stats.last24h}</div>
+            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Last 24 Hours</div>
+          </div>
+          <div style={{
+            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
+            background: stats.failed > 0 ? 'rgba(239,68,68,0.08)' : 'rgba(52,211,153,0.08)',
+            border: `1px solid ${stats.failed > 0 ? 'rgba(239,68,68,0.15)' : 'rgba(52,211,153,0.15)'}`,
+          }}>
+            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: stats.failed > 0 ? 'var(--accent-red, #ef4444)' : 'var(--accent-green, #34d399)' }}>
+              {stats.failed}
+            </div>
+            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Failed</div>
+          </div>
+          {stats.lastIngestion && (
+            <div style={{
+              flex: '2 1 250px', padding: '14px 18px', borderRadius: '12px',
+              background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
+            }}>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                Last Ingestion: {new Date(stats.lastIngestion.timestamp).toLocaleString()}
+              </div>
+              <div style={{ fontSize: '0.75rem', opacity: 0.7, marginTop: '4px' }}>
+                {stats.lastIngestion.triggeredBy} · {stats.lastIngestion.fetched} fetched → {stats.lastIngestion.classified} classified · {stats.lastIngestion.durationMs}ms
+              </div>
+            </div>
+          )}
         </div>
       )}
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTheme } from '@/components/ThemeProvider';
 
 const navItems = [
     { href: '/', icon: '📊', label: 'Dashboard' },
@@ -14,6 +15,7 @@ const navItems = [
 
 export default function Sidebar() {
     const pathname = usePathname();
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <aside className="sidebar">
@@ -54,6 +56,18 @@ export default function Sidebar() {
                     <span>AI Classifier</span>
                     <span className="nav-badge" style={{ color: 'var(--accent-green)' }}>Active</span>
                 </div>
+
+                <div className="nav-section-label" style={{ marginTop: '24px' }}>Appearance</div>
+                <button
+                    type="button"
+                    className="nav-link"
+                    onClick={toggleTheme}
+                    style={{ width: '100%', border: 'none', background: 'transparent' }}
+                >
+                    <span className="nav-icon">{theme === 'dark' ? '🌙' : '☀️'}</span>
+                    <span>{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
+                    <span className="nav-badge">{theme === 'dark' ? 'On' : 'On'}</span>
+                </button>
             </nav>
 
             <div style={{ padding: '16px 12px', borderTop: '1px solid var(--border-subtle)' }}>

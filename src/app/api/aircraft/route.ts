@@ -33,7 +33,19 @@ function clean(t: string): string {
 function field(wt: string, ...names: string[]): string | null {
     for (const n of names) {
         const m = wt.match(new RegExp(`\\|\\s*${n}\\s*=\\s*([\\s\\S]*?)(?=\\n[ \\t]*\\||\\n[ \\t]*}})`, 'i'));
-        if (m?.[1]) { const v = clean(m[1]); if (v && v.length > 1 && v !== '–' && v !== '-' && v !== 'N/A') return v.substring(0, 300); }
+        if (m?.[1]) {
+            // Some infobox lines pack multiple parameters on a single line, e.g.:
+            // | headquarters = Boise, Idaho |url=https://...
+            // We only want the first value ("Boise, Idaho") and should drop any
+            // trailing "|param=..." segments that are actually other fields.
+            let raw = m[1];
+            const extraParamIdx = raw.search(/\|\s*\w+\s*=/);
+            if (extraParamIdx !== -1) {
+                raw = raw.slice(0, extraParamIdx);
+            }
+            const v = clean(raw);
+            if (v && v.length > 1 && v !== '–' && v !== '-' && v !== 'N/A') return v.substring(0, 300);
+        }
     }
     return null;
 }

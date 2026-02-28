@@ -8,9 +8,12 @@ export async function GET(request: NextRequest) {
         const limit = Math.min(100, Math.max(1, parseInt(searchParams.get('limit') || '20')));
         const search = searchParams.get('search') || '';
 
+        const fifteenDaysAgo = new Date(Date.now() - 15 * 24 * 60 * 60 * 1000);
+
         const where: Record<string, unknown> = {
             status: 'classified',
             category: 'AVIATION_TRADE',
+            publishedAt: { gte: fifteenDaysAgo },
         };
 
         if (search) {
