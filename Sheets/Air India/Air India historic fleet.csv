@@ -1,0 +1,195 @@
+REG,AIRCRAFT TYPE,CONFIG,DELIVERED,EXIT DATE,STATUS / FATE,REMARK,AIRCRAFT NAME
+OO-MKO,Airbus A300B4-103,,Apr 1994,14 May 1994,OO-MKO European Airlines,lsf European Airlines,
+V2-LDX,Airbus A300B4-203,,14 May 1994,7 Sep 1994,OO-TJO European Airlines,lsf European Airlines,
+VT-EHN,Airbus A300B4-203,C16Y216,28 Jul 1982,May 2002,YA-BAD Ariana Afghan Airlines,,Ganga W
+VT-EHO,Airbus A300B4-203,C16Y216,10 Aug 1982,May 2002,YA-BAB Ariana Afghan Airlines,,Godavari W
+VT-EHQ,Airbus A300B4-203,C16Y216,5 Nov 1982,May 2002,YA-BAC Ariana Afghan Airlines,,Cauvery W
+C-GCIL,Airbus A310-324,,16 Jan 1996,23 Jan 1998,F-WHPU Airbus Financial Services,"lsd, opby Air Club International",
+C-GCIO,Airbus A310-324,C24Y180,Feb 1996,Nov 1997,F-WHPV Airbus Financial Services,lsf Air Club International,
+OK-YAD,Airbus A310-325,,23 Mar 2007,24 Apr 2009,OK-YAD Czech Airlines (CSA),lsf Czech Airlines (CSA),
+V2-LEC,Airbus A310-324,,9 Jan 1995,23 Mar 1997,PK-MAW Merpati,,
+V2-LED,Airbus A310-324,,23 Dec 1994,5 Sep 1996,PK-MAX Merpati,,
+VT-AIA,Airbus A310-324,C12Y175,8 Dec 2003,7 Mar 2010,Scrapped,,Tapti
+VT-AIB,Airbus A310-324,C12Y175,2 Mar 2004,6 Apr 2010,Scrapped,,Pennar
+VT-AIG,Airbus A310-324,,13 Jul 2004,31 Jul 2007,N819FD FedEx Express,lsd,Kosi W
+VT-AIH,Airbus A310-324,C20Y181,28 Jun 2004,31 Jul 2007,N818FD FedEx Express,lsd,Tungabhadra W
+VT-AIN,Airbus A310-324,C12Y175,7 Jun 2005,4 Jun 2008,VT-AIN Deccan 360,,Damodar W
+VT-AIO,Airbus A310-324,C12Y175,5 Aug 2005,29 Aug 2008,VT-AIO Deccan 360,,Vaigai
+VT-AIP,Airbus A310-324,C12Y175,20 Sep 2005,8 Oct 2008,VT-AIP Deccan 360,,Pamba W
+VT-EJG,Airbus A310-304,C20Y181,11 Apr 1986,2010,Scrapped,,Yamuna
+VT-EJH,Airbus A310-304(F),Cargo,22 Aug 2008,8 Jun 2012,N430AL Apollo Aviation,,Tista
+VT-EJI,Airbus A310-304(F),Cargo,Dec 2008,Mar 2011,5X-HJI Shiv Air,,Saraswati
+VT-EJJ,Airbus A310-304,C20Y181,29 Oct 1986,2010,Scrapped,,Beas
+VT-EJK,Airbus A310-304,C20Y181,29 Oct 1986,May 2010,Preserved,,Gomati
+VT-EJL,Airbus A310-304,C20Y181,30 Mar 1987,Aug 2011,N428AL Apollo Aviation,,Sabarmati
+VT-EQS,Airbus A310-304(F),Cargo,26 Apr 2007,20 Mar 2012,N538AL Apollo Aviation,,Krishna
+VT-EQT,Airbus A310-304(F),Cargo,16 May 2007,19 Feb 2010,VT-EQT Aryan Cargo Express,,Narmada
+VT-EVE,Airbus A310-324,C20Y181,16 Dec 2000,5 Sep 2007,D-AIJW Airbus Industrie,lsd,Periyar
+VT-EVF,Airbus A310-324,C20Y181,10 Mar 2001,14 Sep 2007,ST-ATN Sudan Airways,,Mahanadi W
+VT-EVG,Airbus A310-304,,19 Jul 2001,6 Oct 2004,N447DN GECAS,lsd,Kosi W
+VT-EVH,Airbus A310-304,C20Y181,28 Jun 2001,22 Jul 2004,JY-JAH Jordan Aviation,lsd,Tungabhadra W
+VT-EVI,Airbus A310-304,,Feb 2002,Jun 2005,TC-SGC Saga Airlines,lsd,Brahmaputra
+VT-EVU,Airbus A310-324,,25 Oct 2002,13 Nov 2005,N266BA Boeing Aircraft Holding Company,lsf Singapore Airlines,Godavari W
+VT-EVW,Airbus A310-304,C20Y181,20 Dec 2002,9 Mar 2009,N598HS GA Telesis,lsd,Cauvery
+VT-EVX,Airbus A310-304,C20Y181,20 Dec 2002,30 Oct 2008,Scrapped,lsd,Luni
+VT-EVY,Airbus A310-324,,26 Nov 2002,5 Dec 2005,N28SBA Boeing Aircraft Holding Company,lsf Singapore Airlines,Ganga
+VT-SCA,Airbus A319-112,Y144,24 Aug 2007,6 Jul 2020,LY-BHE Carlyle Aviation Partners,lsd,
+VT-SCB,Airbus A319-112,Y144,24 Aug 2007,19 Jan 2024,VP-CDF Avolon,lsd,
+VT-SCC,Airbus A319-112,Y144,24 Aug 2007,16 Dec 2023,VP-CDH Avolon,lsd,
+VT-SCD,Airbus A319-112,Y144,24 Aug 2007,20 May 2014,CS-TTU TAP Air Portugal,lsd,
+VT-SCE,Airbus A319-112,Y144,24 Aug 2007,20 May 2014,CS-TTV TAP Air Portugal,lsd,
+VT-SCG,Airbus A319-112,C8Y114,18 Oct 2007,23 Sep 2023,Stored,,
+VT-SCI,Airbus A319-112,C8Y114,30 Nov 2007,22 Nov 2019,Scrapped,,
+VT-SCJ,Airbus A319-112,C8Y114,15 Nov 2007,19 Apr 2024,Stored,,
+VT-SCK,Airbus A319-112,C8Y114,19 Dec 2007,15 Dec 2019,Scrapped,,
+VT-SCL,Airbus A319-112,C8Y114,14 Oct 2008,23 Aug 2020,Partially Preserved,,
+VT-SCN,Airbus A319-112,C8Y114,7 Nov 2008,5 Nov 2020,Stored,,
+VT-SCO,Airbus A319-112,C8Y114,4 Mar 2009,27 Mar 2021,VT-SCO Defence Research and Development Organisation (DRDO),,
+VT-SCP,Airbus A319-112,C8Y114,29 Apr 2009,4 Apr 2024,Stored,,
+VT-SCS,Airbus A319-112,C8Y114,31 Aug 2009,6 Nov 2023,Stored,Mahatma Gandhi W tail,
+VT-SCT,Airbus A319-112,C8Y114,29 Sep 2009,12 Nov 2018,Preserved,,
+VT-SCU,Airbus A319-112,C8Y114,27 Oct 2009,8 Apr 2023,Preserved,,
+VT-SCW,Airbus A319-112,C8Y114,21 Dec 2009,17 May 2019,Preserved,,
+VT-SCX,Airbus A319-112,C8Y114,27 Jan 2010,12 Nov 2018,Scrapped,,
+VT-EPB,Airbus A320-231,CY168,24 Aug 2007,25 Jan 2016,Partially Scrapped,,
+VT-EPC,Airbus A320-231,CY168,24 Aug 2007,Sep 2016,Preserved,,
+VT-EPD,Airbus A320-231,C20Y126,24 Aug 2007,2011,Scrapped,,
+VT-EPE,Airbus A320-231,C20Y126,24 Aug 2007,2009,Scrapped,,
+VT-EPF,Airbus A320-231,CY168,24 Aug 2007,23 Aug 2017,Preserved,,
+VT-EPG,Airbus A320-231,CY168,24 Aug 2007,2 May 2016,Stored,,
+VT-EPH,Airbus A320-231,CY168,24 Aug 2007,2015,Preserved,,
+VT-EPI,Airbus A320-231,CY168,24 Aug 2007,12 Jul 2015,Scrapped,,
+VT-EPJ,Airbus A320-231,CY168,24 Aug 2007,21 Oct 2017,Stored,,
+VT-EPK,Airbus A320-231,C20Y126,24 Aug 2007,2009,Stored,World Aids Day cs,
+VT-EPL,Airbus A320-231,C20Y126,24 Aug 2007,2010,Preserved,,
+VT-EPM,Airbus A320-231,C20Y126,24 Aug 2007,Jul 2011,Scrapped,,
+VT-EPO,Airbus A320-231,C20Y126,24 Aug 2007,2010,Preserved,,
+VT-EPP,Airbus A320-231,C20Y126,24 Aug 2007,2009,Scrapped,,
+VT-EPQ,Airbus A320-231,C20Y126,24 Aug 2007,2010,Scrapped,,
+VT-EPR,Airbus A320-231,C20Y126,24 Aug 2007,2006,Scrapped,,
+VT-EPS,Airbus A320-231,C20Y126,24 Aug 2007,Oct 2011,Scrapped,,
+VT-ESA,Airbus A320-231,C20Y126,24 Aug 2007,Feb 2011,Scrapped,,
+VT-ESB,Airbus A320-231,CY168,24 Aug 2007,Feb 2017,Preserved,,
+VT-ESC,Airbus A320-231,CY168,24 Aug 2007,Feb 2017,Preserved,,
+VT-ESD,Airbus A320-231,CY168,24 Aug 2007,19 May 2017,Preserved,,
+VT-ESE,Airbus A320-231,CY168,24 Aug 2007,4 Jun 2018,Preserved,,
+VT-ESF,Airbus A320-231,CY168,24 Aug 2007,9 Oct 2017,Stored,Star Alliance W cs,
+VT-ESG,Airbus A320-231,CY168,24 Aug 2007,2011,Preserved,,
+VT-ESH,Airbus A320-231,C20Y126,24 Aug 2007,5 Jan 2014,Written Off,,
+VT-ESI,Airbus A320-231,CY168,24 Aug 2007,31 May 2017,Preserved,,
+VT-ESJ,Airbus A320-231,CY168,24 Aug 2007,7 Feb 2018,Preserved,,
+VT-ESK,Airbus A320-231,CY168,24 Aug 2007,2009,Scrapped,,
+VT-ESL,Airbus A320-231,CY168,24 Aug 2007,14 Jun 2019,Preserved,,
+VT-EVO,Airbus A320-231,C20Y126,24 Aug 2007,28 Mar 2011,Scrapped,lsd,
+VT-EVP,Airbus A320-231,C20Y126,24 Aug 2007,28 Mar 2011,Scrapped,lsd,
+VT-EVQ,Airbus A320-231,C20Y126,24 Aug 2007,30 May 2011,Scrapped,lsd,
+VT-EVR,Airbus A320-231,C20Y126,24 Aug 2007,25 May 2011,Scrapped,lsd,
+VT-EVS,Airbus A320-231,C20Y126,24 Aug 2007,18 Apr 2012,N388VL Volito Aviation,lsd,
+VT-EVT,Airbus A320-231,C20Y126,24 Aug 2007,19 Apr 2012,N389VL Volito Aviation,lsd,
+VT-EXA,Airbus A320-214(WL),Y180,3 Feb 2015,14 Feb 2025,VT-EXA Air India Express,lsd,
+VT-EXB,Airbus A320-214(WL),Y180,9 Jul 2015,14 Feb 2025,VT-EXB Air India Express,lsd,
+VT-EXC,Airbus A320-214(WL),Y180,3 Aug 2015,14 Feb 2025,VT-EXC Air India Express,lsd,
+VT-EXD,Airbus A320-214(WL),Y180,14 Sep 2015,9 Oct 2024,VT-EXD Air India Express,lsd,
+VT-EXE,Airbus A320-214(WL),Y180,28 Oct 2015,9 Oct 2024,VT-EXE Air India Express,lsd,
+VT-EYI,Airbus A320-231,C20Y126,24 Aug 2007,17 May 2010,N478BV AerCap,lsd,
+VT-EYK,Airbus A320-231,C20Y126,24 Aug 2007,17 Jul 2010,Scrapped,lsd,
+VT-EYL,Airbus A320-231,C20Y126,24 Aug 2007,19 Oct 2011,YA-KMA Kam Air,lsd,
+VT-RTF,Airbus A320-251N,Y186,11 Oct 2023,11 Jan 2025,VT-RTF Air India Express,lsd,
+VT-RTG,Airbus A320-251N,Y186,7 Dec 2023,13 Jan 2025,VT-RTG Air India Express,lsd,
+VT-RTH,Airbus A320-251N,Y186,30 Nov 2023,14 Feb 2025,VT-RTH Air India Express,lsd,
+VT-RTI,Airbus A320-251N,Y186,15 Dec 2023,11 Jan 2025,VT-RTI Air India Express,lsd,
+VT-RTO,Airbus A320-251N,Y186,9 Nov 2023,12 Dec 2024,VT-RTO Air India Express,lsd,
+VT-RTP,Airbus A320-251N,Y186,16 Nov 2023,12 Dec 2024,VT-RTP Air India Express,lsd,
+VT-RTQ,Airbus A320-251N,Y186,31 Oct 2023,14 Dec 2024,VT-RTQ Air India Express,lsd,
+VT-PPA,Airbus A321-211,C12Y170,19 Jun 2007,10 Oct 2021,CA-7081 Defence Research and Development Organisation (DRDO),,
+VT-PPB,Airbus A321-211,C12Y170,16 Jul 2007,27 Jan 2022,CA-7082 Defence Research and Development Organisation (DRDO),,
+VT-PPD,Airbus A321-211,C12Y170,1 Aug 2007,27 Jan 2022,CA-7083 Defence Research and Development Organisation (DRDO),Mahatma Gandhi W tail,
+VT-PPE,Airbus A321-211,C12Y170,3 Dec 2007,20 Jan 2022,CA-7084 Defence Research and Development Organisation (DRDO),,
+VT-PPF,Airbus A321-211,C12Y170,13 Dec 2007,2 Dec 2021,CA-7085 Defence Research and Development Organisation (DRDO),,
+VT-PPG,Airbus A321-211,C12Y170,15 Jan 2008,20 Nov 2021,CA-7086 Defence Research and Development Organisation (DRDO),,
+VT-PPN,Airbus A321-211,C12Y170,30 Jun 2009,28 Aug 2023,Preserved,,
+VT-RTB,Airbus A321-251NX,Y232,27 Apr 2023,19 Apr 2025,VT-RTB Air India Express,lsd,
+VT-RTC,Airbus A321-251NX,C12Y180,29 Mar 2023,23 Apr 2025,VT-RTC Air India Express,lsd,
+VT-RTD,Airbus A321-251NX,C12Y180,23 Mar 2023,9 Aug 2025,VT-RTD Air India Express,lsd,
+VT-RTE,Airbus A321-251NX,Y232,18 May 2023,19 Apr 2025,VT-RTE Air India Express,lsd,
+VT-IWA,Airbus A330-223,C24Y225,26 Sep 2007,11 Nov 2014,G-CINP Apollo Aviation,lsd,
+VT-IWB,Airbus A330-223,C24Y225,29 Nov 2007,11 Nov 2014,G-CINR Apollo Aviation,lsf,
+VT-EGF,Boeing 737-2A8(F) Adv,Cargo,28 Jan 2008,2012,Preserved,,
+VT-EGG,Boeing 737-2A8(F) Adv,Cargo,24 Aug 2008,2014,Preserved,,
+VT-EGI,Boeing 737-2A8(F) Adv,Cargo,24 Aug 2007,2012,Preserved,,
+VT-EGJ,Boeing 737-2A8(F) Adv,Cargo,24 Aug 2007,,Preserved,,
+VT-EHH,Boeing 737-2A8(F) Adv,Cargo,24 Aug 2007,2012,Preserved,,
+N204AE,Boeing 747-2B4BM,,2 Oct 1987,15 Dec 1987,N204AE Philippine Airlines,lsf Carter Leasing Inc,
+N747WR,Boeing 747-273C,Cargo,18 Mar 1986,Nov 1988,N471EV Evergreen International Airlines,lsf Evergreen International Airlines,
+VT-EBD,Boeing 747-237B,,22 Mar 1971,1 Jan 1978,Written Off,,Emperor Ashoka W
+VT-EBE,Boeing 747-237B,,20 Apr 1971,22 Jun 2000,N960JS Aero Controls,,Emperor Shahjehan W
+VT-EBN,Boeing 747-237B,,28 Mar 1972,22 Jun 2000,N459JS Aero Controls,,Emperor Rajendra Chola
+VT-EBO,Boeing 747-237B,,1 Jun 1972,7 May 1990,Written Off,,Emperor Vikramaditya
+VT-EDU,Boeing 747-237B,F16C40Y338,23 Dec 1975,31 May 2000,Scrapped,,Emperor Akbar W
+VT-EFJ,Boeing 747-237B,,3 Feb 1978,2 Feb 1998,N104TR FSBU First Security Bank of Utah,,Chandragupta W
+VT-EFO,Boeing 747-237B,,30 Jun 1978,23 Jun 1985,Destroyed,,Emperor Kanishka W
+VT-EFU,Boeing 747-237B,,14 Aug 1979,,Scrapped,,Krishna Deva Raya W
+VT-EGA,Boeing 747-237B,,21 Dec 1979,,Scrapped,,Samudra Gupta
+VT-EGB,Boeing 747-237B,F16C40Y338,20 Feb 1980,,Scrapped,,Mahendra Varman W
+VT-EGC,Boeing 747-237B,,4 Apr 1980,,Partially Preserved,,Harshvardhan
+VT-ENQ,Boeing 747-212B,F16C40Y338,22 May 1987,4 Feb 1998,NS22UP United Parcel Service (UPS),,Himalaya
+VT-EPW,Boeing 747-337M,F16C40Y227/Cargo,21 Oct 1988,2008,Scrapped,,Shivaji
+VT-EPX,Boeing 747-337M,F16C40Y227/Cargo,22 Nov 1988,2008,Scrapped,,Narasimha Varman
+VT-AIC,Boeing 747-4B5,,28 Nov 2003,27 Nov 2006,HL7607 Korean Air,lsf Korean Air,Sanchi
+VT-AID,Boeing 747-4B5,,23 Dec 2003,22 Dec 2006,HL7606 Korean Air,lsf Korean Air,Kaziranga
+VT-AIE,Boeing 747-412,F12C50Y313,9 Jul 2004,4 May 2007,N242BA Boeing Aircraft Holding Company,,Mamallapuram
+VT-AIF,Boeing 747-412,F12C34Y385,18 Oct 2004,23 Oct 2007,N728BA Boeing Aircraft Holding Company,,Ellora
+VT-AIM,Boeing 747-433M,F16C40Y227/Cargo,26 Apr 2005,28 Apr 2008,A6-COM Dubai Royal Air Wing,,Sunderbans
+VT-AIQ,Boeing 747-412,,27 Oct 2005,16 Oct 2006,N223BA Boeing Capital Corporation (BCC),,Elephenta
+VT-AIS,Boeing 747-4H6,F18C50Y316,22 Sep 2007,23 Sep 2008,N703AC Aircastle,lsd,Sanchi
+VT-ESM,Boeing 747-437,F12C26Y385,4 Aug 1993,4 Sep 2009,Written Off,,Konark
+VT-ESN,Boeing 747-437,F12C26Y385,12 Nov 1993,2 Jul 2013,Scrapped,lsd,Tanjore
+VT-ESO,Boeing 747-437,F12C26Y385,10 Dec 1993,17 Sep 2020,Stored,lsd "Mahatma Gandhi (tail)" W sticker,Khajuraho W
+VT-ESP,Boeing 747-437,F12C26Y385,28 Jun 1994,28 Feb 2020,Scrapped,,Ajanta
+VT-EVA,Boeing 747-437,F12C26Y385,31 Oct 1996,11 Mar 2021,N940AS AerSale,,Agra W
+VT-EVB,Boeing 747-437,F12C26Y385,15 Nov 1996,26 Feb 2020,Scrapped,,Velha Goa
+VT-EVJ,Boeing 747-4B5,,22 Nov 2002,9 Mar 2006,HL7606 Korean Air,lsf Korean Air,Fatehpur Sikri
+TC-GLA,Boeing 757-2Q8,,Feb 2007,1 Oct 2007,TC-GLA Golden International Airlines,lsf Golden International Airlines,
+CS-TLQ,Boeing 767-3Y0ER,,24 Feb 2007,26 Aug 2007,CS-TLQ EuroAtlantic Airways,lsf EuroAtlantic Airways,
+G-CDPT,Boeing 767-319ER,,23 Nov 2006,16 Mar 2008,G-CDPT Flyglobespan,lsf Flyglobespan,
+G-CEFG,Boeing 767-319ER,,15 May 2007,10 Sep 2008,G-CEFG Flyglobespan,lsf Flyglobespan,
+VT-AEE,Boeing 777-232LR,C28W48Y212,17 Apr 2023,15 Jan 2026,Stored,lsd,अविजित / Avijit
+VT-AEF,Boeing 777-232LR,C28W48Y212,21 Nov 2022,16 Sep 2025,N399MT Jetran,lsd,विहान / Vihaan
+VT-AEG,Boeing 777-232LR,C28W48Y212,15 Dec 2022,21 Sep 2025,N70VL Jetran,lsd,प्रभात / Prabhat
+VT-AEH,Boeing 777-232LR,C28W48Y212,13 Jan 2023,3 Jan 2026,Stored,lsd,आलोक / Alok
+VT-AIJ,Boeing 777-222ER,C46Y249,17 Feb 2005,20 Aug 2010,N790UA US Bank Trustee,,Neelambari
+VT-AIK,Boeing 777-222ER,C46Y244,24 Dec 2004,Apr 2010,N205UA ALAFCO,,Megh Malhaar
+VT-AIL,Boeing 777-222ER,C46Y249,10 Mar 2005,12 Jan 2011,N789UA US Bank Trustee,,Kalyani
+VT-AIR,Boeing 777-222,F12C49Y197,4 Jan 2006,21 Oct 2010,N719ML Wells Fargo Bank Northwest,,Hamsadhwani
+VT-ALA,Boeing 777-237LR,F8C35Y195,25 Jul 2007,30 Dec 2013,A6-LRA Etihad Airways,,Andhra Pradesh
+VT-ALB,Boeing 777-237LR,F8C35Y195,23 Aug 2007,3 Mar 2014,A6-LRB Etihad Airways,,Arunachal Pradesh
+VT-ALC,Boeing 777-237LR,F8C35Y195,27 Jul 2007,9 Feb 2014,A6-LRC Etihad Airways,,Assam
+VT-ALD,Boeing 777-237LR,F8C35Y195,31 Dec 2007,17 May 2014,A6-LRD Etihad Airways,,Gujarat
+VT-ALE,Boeing 777-237LR,F8C35Y195,3 Mar 2008,19 Apr 2014,A6-LRE Etihad Airways,,Haryana
+VT-ALF,Boeing 777-237LR,F8C35Y195,23 Jun 2009,31 Mar 2025,N14QC Jetran,,झारखंड / Jharkhand W
+VT-ALG,Boeing 777-237LR,F8C35Y195,28 Jul 2009,16 Mar 2025,N13QC Jetran,Mahatma Gandhi W tail,केरल / Kerala W
+VT-ALH,Boeing 777-237LR,F8C35Y195,28 Aug 2009,12 May 2025,N15QC Jetran,,महाराष्ट्र / Maharashtra W
+VT-ALV,Boeing 777-337ER,F4C35Y303,23 Jan 2018,29 May 2018,K7066 Government of India,,Punjab
+VT-ALW,Boeing 777-337ER,F4C35Y303,31 Jan 2018,29 Jun 2018,K7067 Government of India,,Rajasthan
+VT-ANB,Boeing 787-8 Dreamliner,C18Y238,28 Jan 2014,12 Jun 2025,Written Off,"150 Years of Celebrating the Mahatma W sticker",
+VT-TSQ,Boeing 787-9 Dreamliner,C30W36Y226,12 Nov 2024,13 Aug 2025,HS-TWD Thai Airways,lsd,
+VT-EIO,Dornier Do-228-201,Y19,24 Aug 2007,Oct 2008,VT-EIO Northeast Shuttles,,
+VT-EJO,Dornier Do-228-201,Y19,24 Aug 2007,Oct 2008,VT-EJO Orient Flights Aviation Academy,,
+LX-ACV,McDonnell Douglas DC-8-63CF,Cargo,Sep 1979,Mar 1980,LX-ACV Cargolux,lsf Cargolux,
+N772FT,McDonnell Douglas DC-8-63CF,,1 Dec 1980,8 Aug 1981,N772FT Flying Tigers,lsf Overseas National Airways (ONA),
+N773FT,McDonnell Douglas DC-8-63CF,Cargo,8 Aug 1981,5 Dec 1982,N773FT Flying Tigers,lsf Flying Tigers,
+N776FT,McDonnell Douglas DC-8-63CF,,29 Jan 1981,16 Aug 1981,N776FT Flying Tigers,lsf Flying Tigers,
+N783FT,McDonnell Douglas DC-8-63AF,Cargo,25 Nov 1982,7 Apr 1983,N783FT Flying Tigers,lsf Flying Tigers,
+N790FT,McDonnell Douglas DC-8-63AF,Cargo,5 Dec 1982,Oct 1983,N790FT Flying Tigers,lsf Cammacorp,
+N791FT,McDonnell Douglas DC-8-73CF(F),Cargo,23 Aug 1994,Aug 1995,N791FT Emery Worldwide Airlines,lsf Emery Worldwide Airlines,
+N796FT,McDonnell Douglas DC-8-63CF,,16 Aug 1981,25 Nov 1982,N796FT Flying Tigers,lsf Flying Tigers,
+N816EV,McDonnell Douglas DC-8-73CF,Cargo,Jan 1988,Nov 1988,N816EV Evergreen International Airlines,lsf Evergreen International Airlines,
+N865F,McDonnell Douglas DC-8-63CF,,Sep 1983,Jul 1984,N865F Emery Worldwide Airlines,lsf Overseas National Airways (ONA),
+N874SJ,McDonnell Douglas DC-8-73CF(F),Cargo,25 Jun 1994,Aug 1995,N874SJ Southern Air Transport,lsf Southern Air Transport,
+N875SJ,McDonnell Douglas DC-8-73(F),Cargo,24 Oct 1994,20 Feb 1995,N875SJ Australian airExpress,lsf Southern Air Transport,
+N906R,McDonnell Douglas DC-8-63CF,,Feb 1985,Mar 1986,N906R Emery Worldwide Airlines,lsf National Airlines,
+N921R,McDonnell Douglas DC-8-63CF,,Aug 1984,Nov 1984,N921R National Airlines,lsf National Airlines,
+TF-FLC,McDonnell Douglas DC-8-63CF,Cargo,2 Jul 1985,25 Jul 1986,"TF-FLC Saudia - Saudi Arabian Airlines",lsf Evergreen International Airlines,
+V2-LEJ,Lockheed L-1011 TriStar 500 (L-1011-385-3),C28Y225,Nov 1995,Nov 1996,V2-LEJ Caribjet,lsf Caribjet,
+V2-LEK,Lockheed L-1011 TriStar 500 (L-1011-385-3),C28Y225,Dec 1995,Nov 1996,V2-LEK Caribjet,lsf Caribjet,
+V2-LEO,Lockheed L-1011 TriStar 500 (L-1011-385-3),C28Y225,Aug 1996,Sep 1996,V2-LEO Caribjet,lsf Caribjet,

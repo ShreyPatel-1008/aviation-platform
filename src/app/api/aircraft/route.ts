@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/db';
 
 const AV_KEY = 'acd5a3889645f09581cbc68e8570d67c';
 const UA = 'AviationIQ/1.0';
@@ -175,16 +176,16 @@ export async function GET(request: NextRequest) {
             primaryUser: field(wt, 'primary_user', 'users', 'operators'),
         };
 
-        // ─── SECTION 3: Fleet Composition (from AviationStack airplanes) ──
+        // ─── SECTION 3: Fleet Composition ──────────────────────────────
+        // 1) Default from AviationStack airplanes
         const avPlanes = avFleetData?.data || [];
-        const fleetTotal = avFleetData?.pagination?.total || avPlanes.length;
+        let fleetTotal = avFleetData?.pagination?.total || avPlanes.length;
 
-        // Group aircraft by model for fleet composition
-        const fleetByModel: Record<string, { model: string; modelCode: string; total: number; active: number; stored: number; engineType: string }> = {};
+        const fleetByModelFromApi: Record<string, { model: string; modelCode: string; total: number; active: number; stored: number; engineType: string }> = {};
         for (const plane of avPlanes) {
             const key = plane.model_name || plane.iata_type || 'Unknown';
-            if (!fleetByModel[key]) {
-                fleetByModel[key] = {
+            if (!fleetByModelFromApi[key]) {
+                fleetByModelFromApi[key] = {
                     model: key,
                     modelCode: plane.model_code || plane.iata_type || '',
                     total: 0,
@@ -193,15 +194,60 @@ export async function GET(request: NextRequest) {
                     engineType: plane.engines_type || '',
                 };
             }
-            fleetByModel[key].total++;
-            if (plane.plane_status === 'active') fleetByModel[key].active++;
-            else fleetByModel[key].stored++;
+            fleetByModelFromApi[key].total++;
+            if (plane.plane_status === 'active') fleetByModelFromApi[key].active++;
+            else fleetByModelFromApi[key].stored++;
         }
 
-        const fleetComposition = Object.values(fleetByModel).sort((a, b) => b.total - a.total);
+        let fleetComposition = Object.values(fleetByModelFromApi).sort((a, b) => b.total - a.total);
 
-        // ─── SECTION 4: Individual Aircraft (sample) ──────────
-        const individualAircraft = avPlanes.slice(0, 20).map((p: Record<string, string | null>) => ({
+        // 2) Override fleet composition from local DB (ingested Fleet Data.csv) when available.
+        try {
+            const airlineNameKey = airlineProfile.airlineName || summary.title || name;
+            if (airlineNameKey) {
+                const dbAirline = await prisma.airline.findFirst({
+                    where: { name: airlineNameKey },
+                    include: {
+                        fleets: {
+                            include: { aircraftType: true },
+                        },
+                    },
+                });
+
+                if (dbAirline && dbAirline.fleets.length > 0) {
+                    const byModelDb: Record<string, { model: string; modelCode: string; total: number; active: number; stored: number; engineType: string }> = {};
+
+                    for (const f of dbAirline.fleets) {
+                        const modelName = f.aircraftType?.name || f.aircraftTypeRaw || 'Unknown';
+                        if (!byModelDb[modelName]) {
+                            byModelDb[modelName] = {
+                                model: modelName,
+                                modelCode: f.aircraftType?.iataCode || f.aircraftType?.icaoCode || '',
+                                total: 0,
+                                active: 0,
+                                stored: 0,
+                                engineType: '',
+                            };
+                        }
+                        const totalForType = typeof f.total === 'number'
+                            ? f.total
+                            : (f.current ?? 0) + (f.future ?? 0) + (f.historic ?? 0);
+
+                        byModelDb[modelName].total += totalForType;
+                        byModelDb[modelName].active += f.current ?? 0;
+                        byModelDb[modelName].stored += f.historic ?? 0;
+                    }
+
+                    fleetComposition = Object.values(byModelDb).sort((a, b) => b.total - a.total);
+                    fleetTotal = fleetComposition.reduce((sum, row) => sum + row.total, 0);
+                }
+            }
+        } catch {
+            // If DB is not seeded or query fails, silently fall back to AviationStack data.
+        }
+
+        // ─── SECTION 4: Individual Aircraft (full sample from API) ──────
+        const individualAircraft = avPlanes.map((p: Record<string, string | null>) => ({
             registration: p.registration_number || null,
             serialNumber: p.construction_number || null,        // MSN
             lineNumber: p.line_number || null,

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import LoadingAnimation from '@/components/LoadingAnimation';
 
 interface Article {
     id: string;
@@ -86,12 +87,40 @@ export default function RegulationsPage() {
             <div className="search-section">
                 <form onSubmit={handleSearch} className="search-bar">
                     <span className="search-icon">🔍</span>
-                    <input
-                        type="text"
-                        placeholder="Search regulations... (e.g., FAA, NOTAM, airworthiness directive)"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
+                    <div style={{ position: 'relative', flex: 1 }}>
+                        <input
+                            type="text"
+                            placeholder="Search regulations... (e.g., FAA, NOTAM, airworthiness directive)"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            style={{ paddingRight: '32px' }}
+                        />
+                        {search.trim() !== '' && (
+                            <button
+                                type="button"
+                                onClick={() => { setSearch(''); setPage(1); }}
+                                style={{
+                                    position: 'absolute',
+                                    right: 8,
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    width: 18,
+                                    height: 18,
+                                    borderRadius: '999px',
+                                    border: 'none',
+                                    background: 'rgba(148,163,184,0.25)',
+                                    color: 'inherit',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    fontSize: '0.75rem',
+                                }}
+                            >
+                                ✕
+                            </button>
+                        )}
+                    </div>
                     <button type="submit" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>
                         Search
                     </button>
@@ -99,10 +128,7 @@ export default function RegulationsPage() {
             </div>
 
             {loading ? (
-                <div className="loading-container">
-                    <div className="loading-spinner" />
-                    <p>Loading regulations...</p>
-                </div>
+                <LoadingAnimation message="Loading regulations..." fullScreen />
             ) : articles.length > 0 ? (
                 <>
                     <div className="articles-grid">

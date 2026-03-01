@@ -1,0 +1,70 @@
+REG,AIRCRAFT TYPE,CONFIG,DELIVERED,REMARK,AIRCRAFT NAME,AGE
+VT-SFB,Boeing 737-75C(BDSF)(WL),Cargo,7 Sep 2018,"Parked at DEL, lsd",Bolt,27.6 Years
+VT-SFD,Boeing 737-75C(BDSF)(WL),Cargo,23 Apr 2019,"Parked at DEL, lsd",Sonic,25.6 Years
+VT-SFE,Boeing 737-75C(BDSF)(WL),Cargo,15 Jul 2019,"Parked at DEL, lsd",Flash,27.6 Years
+VT-SLA,Boeing 737-7GL(WL),Y149,15 Nov 2015,"Stored at DEL after incident, lsd",,18.7 Years
+VT-SLB,Boeing 737-7GL(WL),Y149,6 Nov 2015,lsd,Asafoetida,18.6 Years
+VT-SLP,Boeing 737-76J(WL),Y149,4 May 2018,"Parked / Maintenance, lsd",,17 Years
+VT-SYT,Boeing 737-75R(WL),C8Y126,24 Jun 2019,Parked at MAA,,18.6 Years
+VT-SYU,Boeing 737-75R(WL),Y144,26 May 2019,Parked at DEL,,18.4 Years
+9H-CXA,Boeing 737-85R(WL),Y189,27 Oct 2025,lsf Corendon Airlines Europe,,11.5 Years
+9H-CXB,Boeing 737-85R(WL),Y189,5 Nov 2025,lsf Corendon Airlines Europe,,11.7 Years
+9H-TJC,Boeing 737-86N(WL),Y189,27 Oct 2025,lsf Corendon Airlines Europe,,15.1 Years
+9H-TJE,Boeing 737-85R(WL),Y189,3 Nov 2025,lsf Corendon Airlines Europe,,18 Years
+9H-TJF,Boeing 737-85R(WL),Y189,12 Jan 2026,lsf Corendon Airlines Europe,,18 Years
+EI-FFA,Boeing 737-8K5(WL),Y189,24 Nov 2025,lsf Fly4 Airlines,,15.1 Years
+EI-FFB,Boeing 737-8K5(WL),Y189,27 Oct 2025,lsf Fly4 Airlines,,13.2 Years
+EI-FFC,Boeing 737-8K5(WL),Y189,30 Oct 2025,lsf Fly4 Airlines,,13 Years
+OK-TVM,Boeing 737-8FN(WL),Y189,14 Oct 2025,lsf Smartwings,,16.1 Years
+OK-TVR,Boeing 737-86N(WL),Y189,28 Oct 2025,lsf Smartwings,,14.9 Years
+OK-TVS,Boeing 737-86N(WL),Y189,7 Oct 2025,lsf Smartwings,,14.9 Years
+OK-TVU,Boeing 737-86N(WL),Y189,26 Nov 2025,lsf Smartwings,,14 Years
+OK-TVV,Boeing 737-86N(WL),Y189,9 Oct 2025,lsf Smartwings,,13.8 Years
+VT-SGG,Boeing 737-8GJ(WL),Y189,17 Jun 2010,lsd,Chilli,15.7 Years
+VT-SGJ,Boeing 737-86J(WL),Y189,7 Dec 2010,"Parked at CCU, lsd",Cumin W,21.1 Years
+VT-SGV,Boeing 737-8GJ(WL),Y189,7 Nov 2011,lsd,Nigella,14.4 Years
+VT-SLF,Boeing 737-8AS(WL),Y189,22 Dec 2016,lsd,,19.9 Years
+VT-SLG,Boeing 737-8AS(WL),Y189,23 Jan 2017,lsd,Mace W,19.9 Years
+VT-SLJ,Boeing 737-8EH(WL),Y189,12 Jul 2016,lsd,,18.2 Years
+VT-SLM,Boeing 737-8EH(WL),Y189,3 Jul 2016,"Parked at DEL, lsd",Paprika W,18.2 Years
+VT-SXA,Boeing 737-85R(WL),Y186,7 Jun 2019,lsd,,18.7 Years
+VT-SXE,Boeing 737-85R(WL),Y186,31 Oct 2023,"Parked / Maintenance, lsd",,19.1 Years
+VT-SYJ,Boeing 737-8AS(WL),Y189,3 May 2019,lsd,,22.2 Years
+VT-SYZ,Boeing 737-85R(WL),Y186,9 Aug 2019,lsd,,19 Years
+VT-SLC,Boeing 737-9GJER(WL),Y212,7 Aug 2015,lsd,Oregano,17.8 Years
+VT-SLD,Boeing 737-9GJER(WL),Y212,8 Aug 2015,"Parked at MAA, lsd",Fenugreek W,17.7 Years
+VT-SZL,Boeing 737-9GJER(WL),Y212,8 Jun 2015,"Parked at DEL, lsd, Yu Rise & Conquer Hardik cs",Sesame,17.2 Years
+G-LESO,Boeing 737-8 MAX,Y189,11 Nov 2025,lsf Ascend Airways,,7.7 Years
+G-MULR,Boeing 737-8 MAX,Y189,28 Oct 2025,lsf Ascend Airways,,8.2 Years
+G-NOLA,Boeing 737-8 MAX,Y189,2 Nov 2025,lsf Ascend Airways,,7.4 Years
+VT-MAX,Boeing 737-8 MAX,Y189,27 Sep 2018,"Parked at HYD, lsd",King Chilli W,7.5 Years
+VT-MXA,Boeing 737-8 MAX,Y189,31 Oct 2018,"Parked at HYD, lsd",Wasabi W,7.3 Years
+VT-MXB,Boeing 737-8 MAX,Y189,1 Dec 2018,"Parked at CCU, lsd, ""Mankind Pharma Brings Premium DMF Quality"" sticker",Jalapeño W,7.3 Years
+VT-MXC,Boeing 737-8 MAX,Y189,22 Dec 2018,"Parked at HYD, lsd",Mint,7.2 Years
+VT-MXD,Boeing 737-8 MAX,Y189,1 Nov 2018,"lsd, Danube Properties cs",Cinnamon W,7.4 Years
+VT-MXE,Boeing 737-8 MAX,Y189,13 Nov 2018,"Parked at DEL, lsd",Tarragon W,7.3 Years
+VT-MXI,Boeing 737-8 MAX,Y189,27 Dec 2018,lsd,Dill W,7.2 Years
+VT-SJU,Bombardier DHC-8-402 Dash 8 Q400,Y78,16 Feb 2024,Parked at MAA,,15.5 Years
+VT-SQA,Bombardier DHC-8-402 Dash 8 Q400,Y90,21 Sep 2018,,Lal Mirch,7.7 Years
+VT-SQB,Bombardier DHC-8-402 Dash 8 Q400,Y90,23 Oct 2018,,Kalonji,7.5 Years
+VT-SQC,Bombardier DHC-8-402 Dash 8 Q400,Y90,26 Nov 2018,Parked / Maintenance,Kali Mirch,7.3 Years
+VT-SQD,Bombardier DHC-8-402 Dash 8 Q400,Y90,15 Dec 2018,,Rye,7.2 Years
+VT-SQE,Bombardier DHC-8-402 Dash 8 Q400,Y90,9 Jan 2019,Parked at MAA,Shahi Zeera,7.2 Years
+VT-SUB,Bombardier DHC-8-402 Dash 8 Q400,Y78,27 Aug 2011,Parked at MAA,Heeng,14.8 Years
+VT-SUD,Bombardier DHC-8-402 Dash 8 Q400,Y78,4 Sep 2011,Stored at DEL after incident,Tejpatta,14.7 Years
+VT-SUE,Bombardier DHC-8-402 Dash 8 Q400,Y78,23 Sep 2011,Parked at BOM,Elaichi,14.6 Years
+VT-SUF,Bombardier DHC-8-402 Dash 8 Q400,Y78,21 Oct 2011,Parked at BLR,Kesar W,14.6 Years
+VT-SUG,Bombardier DHC-8-402 Dash 8 Q400,Y78,31 Oct 2011,Parked at MAA,Jeera,14.5 Years
+VT-SUH,Bombardier DHC-8-402 Dash 8 Q400,Y78,29 Jun 2012,Parked / Maintenance,Dhania,14.4 Years
+VT-SUI,Bombardier DHC-8-402 Dash 8 Q400,Y78,30 Jun 2012,Parked at MAA,Haldi,14.3 Years
+VT-SUJ,Bombardier DHC-8-402 Dash 8 Q400,Y78,18 Dec 2012,Parked / Maintenance,Dalchini,14.3 Years
+VT-SUK,Bombardier DHC-8-402 Dash 8 Q400,Y78,18 Dec 2012,Parked at MAA,Sarson,14.2 Years
+VT-SUL,Bombardier DHC-8-402 Dash 8 Q400,Y78,30 Jun 2012,Parked / Maintenance,Javitri,14.2 Years
+VT-SUM,Bombardier DHC-8-402 Dash 8 Q400,Y78,30 Jun 2012,Parked at MAA,Jaiphal,14.1 Years
+VT-SUO,Bombardier DHC-8-402 Dash 8 Q400,Y78,30 Jun 2012,Parked at DEL,Laung,14 Years
+VT-SUP,Bombardier DHC-8-402 Dash 8 Q400,Y78,13 Dec 2012,Parked / Maintenance,Imli W,13.9 Years
+VT-SUQ,Bombardier DHC-8-402 Dash 8 Q400,Y78,14 Apr 2016,"Parked at MAA, lsd",Tulsi W,14 Years
+VT-SUR,Bombardier DHC-8-402 Dash 8 Q400,Y78,18 Oct 2016,"Parked at MAA, lsd",,15.5 Years
+VT-SUS,Bombardier DHC-8-402 Dash 8 Q400,Y78,21 Oct 2016,"Parked / Maintenance, lsd",,15.4 Years
+VT-SUV,Bombardier DHC-8-402 Dash 8 Q400,Y78,12 May 2017,"Parked at MAA, lsd",,15.5 Years
+VT-SUY,Bombardier DHC-8-402 Dash 8 Q400,Y78,21 Nov 2017,"Parked at DEL, lsd",,15.5 Years

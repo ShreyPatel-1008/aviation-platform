@@ -1,0 +1,22 @@
+REG,AIRCRAFT TYPE,CONFIG,DELIVERED,EXIT DATE,STATUS / FATE,REMARK
+VT-AMD,Airbus A320-214,Y180,1 Oct 2024,6 Aug 2025,PK-PWQ Pelita Air Service,lsd
+VT-ATB,Airbus A320-216(WL),Y180,1 Oct 2024,14 Dec 2025,Stored,lsd
+VT-ATF,Airbus A320-216(WL),Y180,15 Mar 2024,4 Dec 2025,Stored,lsd
+VT-GWH,Airbus A320-216,Y180,1 Oct 2024,5 Jul 2025,LY-BQW Aero Capital Solutions (ACS),lsd
+VT-HKG,Airbus A320-214,Y180,1 Oct 2024,21 Sep 2025,Stored,lsd
+VT-IMP,Airbus A320-216,Y180,1 Oct 2024,7 Aug 2025,LY-BQV Aero Capital Solutions (ACS),lsd
+VT-KOC,Airbus A320-216,Y180,1 Oct 2024,10 Sep 2025,2-TKOC Castlelake,lsd
+VT-KTM,Airbus A320-214(WL),Y180,1 Oct 2024,15 Jul 2025,PK-PWP Pelita Air Service,lsd
+VT-KUL,Airbus A320-216,Y180,1 Oct 2024,31 Dec 2025,Stored,lsd
+VT-MLE,Airbus A320-214,Y180,1 Oct 2024,16 Nov 2025,Stored,lsd
+VT-NAG,Airbus A320-214,Y180,1 Oct 2024,25 Oct 2025,Stored,lsd
+VT-RED,Airbus A320-216(WL),Y180,1 Oct 2024,7 Jul 2025,M-ABTS BBAM,lsd
+VT-AXA,Boeing 737-86Q,Y189,7 Mar 2005,24 Apr 2010,TC-JHJ AnadoluJet,"lsd, ""Elephant / Camel"" tail"
+VT-AXB,Boeing 737-8BK,Y189,8 Apr 2005,3 Jun 2010,TC-SNM SunExpress,"lsd, ""Rangoli / Kites"" tail"
+VT-AXC,Boeing 737-8BK,Y189,19 Apr 2005,29 Jul 2010,VT-JBT Jet Airways,"lsd, ""Sitar / Tabla"" tail"
+VT-AXD,Boeing 737-8Q8(WL),Y186,16 Mar 2006,7 Jan 2014,C-GTQB Air Transat,"lsd, ""Samai / Diya"" tail"
+VT-AXE,Boeing 737-8Q8(WL),Y186,6 Apr 2006,3 Feb 2014,C-GTQC Air Transat,"lsd, ""Bharatanatyam Dance / Kathakali Dance"" tail"
+VT-AXF,Boeing 737-8Q8(WL),Y186,10 May 2006,18 Mar 2014,C-GTQF Air Transat,"lsd, ""Konark Sun Temple / Taj Mahal"" tail"
+VT-AXG,Boeing 737-8Q8(WL),Y186,24 May 2006,25 Apr 2014,C-GTQG Air Transat,"lsd, ""Saree / Exotic Jewelry"" tail"
+VT-AXH,Boeing 737-8HG(WL),Y186,30 Nov 2006,7 Aug 2020,Written Off,"""India Gate / Gateway of India"" tail"
+VT-AXV,Boeing 737-8HG(WL),Y186,15 Jan 2008,22 May 2010,Written Off,"""Victoria Memorial / Konark Sun Temple"" tail"

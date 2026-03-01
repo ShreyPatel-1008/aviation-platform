@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import LoadingAnimation from '@/components/LoadingAnimation';
 
 interface WikiNewsEntry {
     date: string;
@@ -104,12 +105,7 @@ export default function WikiNewsPage() {
     }
 
     if (loading) {
-        return (
-            <div className="loading-container">
-                <div className="loading-spinner" />
-                <p>Fetching aviation news from Wikipedia...</p>
-            </div>
-        );
+        return <LoadingAnimation message="Fetching aviation news from Wikipedia..." fullScreen />;
     }
 
     return (

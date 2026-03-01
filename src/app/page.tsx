@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import LoadingAnimation from '@/components/LoadingAnimation';
 
 interface Stats {
   total: number;
@@ -133,12 +134,7 @@ export default function DashboardPage() {
   const gridArticles = recentArticles.slice(4);
 
   if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner" />
-        <p>Loading dashboard...</p>
-      </div>
-    );
+    return <LoadingAnimation message="Loading dashboard..." fullScreen />;
   }
 
   return (
@@ -149,69 +145,7 @@ export default function DashboardPage() {
           <h1>AviationIQ Dashboard</h1>
           <p>Premium aviation intelligence — news, fleets and risks in one view.</p>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {/* Scheduler Status Badge */}
-          {scheduler && (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                background: scheduler.active
-                  ? 'rgba(52, 211, 153, 0.15)'
-                  : 'rgba(239, 68, 68, 0.15)',
-                color: scheduler.active
-                  ? 'var(--accent-green, #34d399)'
-                  : 'var(--accent-red, #ef4444)',
-                border: `1px solid ${scheduler.active ? 'rgba(52,211,153,0.3)' : 'rgba(239,68,68,0.3)'}`,
-              }}
-              title={scheduler.active
-                ? `Auto-fetch every ${scheduler.intervalMinutes}min · ${scheduler.runCount} runs · Last: ${scheduler.lastRun ? new Date(scheduler.lastRun).toLocaleTimeString() : 'pending'}`
-                : 'Scheduler inactive — news will go stale'}
-            >
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: scheduler.active ? '#34d399' : '#ef4444', display: 'inline-block' }} />
-              {scheduler.active ? `Auto ⟳ ${scheduler.intervalMinutes}m` : 'Scheduler Off'}
-            </div>
-          )}
-          <button
-            className={`btn btn-primary ${ingesting ? 'ingesting' : ''}`}
-            onClick={triggerIngestion}
-            disabled={ingesting}
-          >
-            <span className="btn-icon">{ingesting ? '⟳' : '🚀'}</span>
-            {ingesting ? 'Ingesting...' : 'Fetch & Classify'}
-          </button>
-        </div>
       </div>
-
-      {/* Pipeline Result */}
-      {pipelineResult && (
-        <div className="pipeline-result">
-          <h4>✅ Pipeline Complete <span style={{ fontSize: '0.8rem', fontWeight: 400, opacity: 0.7 }}>({(pipelineResult.durationMs / 1000).toFixed(1)}s)</span></h4>
-          <div className="result-grid">
-            <div className="result-item">
-              <div className="val">{pipelineResult.fetched}</div>
-              <div className="lbl">Fetched</div>
-            </div>
-            <div className="result-item">
-              <div className="val">{pipelineResult.newArticles}</div>
-              <div className="lbl">New Articles</div>
-            </div>
-            <div className="result-item">
-              <div className="val" style={{ color: 'var(--accent-green)' }}>{pipelineResult.classified}</div>
-              <div className="lbl">Classified</div>
-            </div>
-            <div className="result-item">
-              <div className="val" style={{ color: pipelineResult.failed > 0 ? 'var(--accent-red)' : 'var(--text-primary)' }}>{pipelineResult.failed}</div>
-              <div className="lbl">Failed</div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Hero layout: Featured + Trending */}
       {featuredArticle && (
@@ -385,87 +319,6 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Stats Cards (moved below Recent, above Sources) */}
-      <div className="stats-grid" style={{ marginTop: '32px' }}>
-        <div className="stat-card blue">
-          <div className="stat-icon">📰</div>
-          <div className="stat-value">{stats?.total || 0}</div>
-          <div className="stat-label">Total Articles</div>
-        </div>
-        <div className="stat-card red">
-          <div className="stat-icon">🔴</div>
-          <div className="stat-value">{stats?.accidents || 0}</div>
-          <div className="stat-label">Accidents & Incidents</div>
-        </div>
-        <div className="stat-card green">
-          <div className="stat-icon">💼</div>
-          <div className="stat-value">{stats?.trades || 0}</div>
-          <div className="stat-label">Aviation Trades</div>
-        </div>
-        <div className="stat-card purple">
-          <div className="stat-icon">📜</div>
-          <div className="stat-value">{stats?.regulations || 0}</div>
-          <div className="stat-label">Regulations</div>
-        </div>
-        <div className="stat-card amber">
-          <div className="stat-icon">⏳</div>
-          <div className="stat-value">{stats?.pending || 0}</div>
-          <div className="stat-label">Pending Classification</div>
-        </div>
-      </div>
-
-      {/* Observability Banner */}
-      {stats && (
-        <div style={{
-          display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap',
-        }}>
-          <div style={{
-            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
-            background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
-          }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{stats.last24h}</div>
-            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Last 24 Hours</div>
-          </div>
-          <div style={{
-            flex: '1 1 150px', padding: '14px 18px', borderRadius: '12px',
-            background: stats.failed > 0 ? 'rgba(239,68,68,0.08)' : 'rgba(52,211,153,0.08)',
-            border: `1px solid ${stats.failed > 0 ? 'rgba(239,68,68,0.15)' : 'rgba(52,211,153,0.15)'}`,
-          }}>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: stats.failed > 0 ? 'var(--accent-red, #ef4444)' : 'var(--accent-green, #34d399)' }}>
-              {stats.failed}
-            </div>
-            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Failed</div>
-          </div>
-          {stats.lastIngestion && (
-            <div style={{
-              flex: '2 1 250px', padding: '14px 18px', borderRadius: '12px',
-              background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)',
-            }}>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-                Last Ingestion: {new Date(stats.lastIngestion.timestamp).toLocaleString()}
-              </div>
-              <div style={{ fontSize: '0.75rem', opacity: 0.7, marginTop: '4px' }}>
-                {stats.lastIngestion.triggeredBy} · {stats.lastIngestion.fetched} fetched → {stats.lastIngestion.classified} classified · {stats.lastIngestion.durationMs}ms
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Source distribution */}
-      {stats?.sources && stats.sources.length > 0 && (
-        <div style={{ marginTop: '32px' }}>
-          <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '16px' }}>Source Distribution</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
-            {stats.sources.map((source, i) => (
-              <div key={i} className="stat-card blue" style={{ padding: '16px' }}>
-                <div className="stat-value" style={{ fontSize: '1.4rem' }}>{source.count}</div>
-                <div className="stat-label">{source.name || 'Unknown'}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

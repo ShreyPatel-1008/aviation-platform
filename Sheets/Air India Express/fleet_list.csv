@@ -1,0 +1,107 @@
+REG,AIRCRAFT TYPE,CONFIG,DELIVERED,REMARK,AGE
+VT-BKK,Airbus A320-214,Y180,1 Oct 2024,lsd,15.8 Years
+VT-BOM,Airbus A320-214,Y180,1 Oct 2024,lsd,14.1 Years
+VT-EXA,Airbus A320-214(WL),Y180,14 Feb 2025,lsd,11.1 Years
+VT-EXB,Airbus A320-214(WL),Y180,14 Feb 2025,lsd,10.7 Years
+VT-EXC,Airbus A320-214(WL),Y180,14 Feb 2025,lsd,10.6 Years
+VT-EXD,Airbus A320-214(WL),Y180,9 Oct 2024,lsd,10.5 Years
+VT-EXE,Airbus A320-214(WL),Y180,9 Oct 2024,lsd,10.4 Years
+VT-IXR,Airbus A320-214,Y180,1 Oct 2024,lsd,17.1 Years
+VT-JPR,Airbus A320-216,Y180,1 Oct 2024,lsd,17.7 Years
+VT-JRT,Airbus A320-216,Y180,1 Oct 2024,"Parked / Maintenance, lsd",18 Years
+VT-VNS,Airbus A320-216(WL),Y180,1 Oct 2024,lsd,11.7 Years
+VT-VTZ,Airbus A320-214,Y180,1 Oct 2024,"Parked / Maintenance, lsd",15.6 Years
+VT-ATD,Airbus A320-251N,Y186,8 Nov 2023,"lsd, ""Ajrakh"" W tail",5.7 Years
+VT-ATE,Airbus A320-251N,Y186,8 Dec 2023,lsd,5.6 Years
+VT-ATG,Airbus A320-251N,Y186,18 Dec 2023,lsd,5.4 Years
+VT-ATH,Airbus A320-251N,Y186,1 Oct 2024,lsd,4.9 Years
+VT-ATJ,Airbus A320-251N,Y186,5 Sep 2023,"lsd, ""Paithani"" W tail",4.7 Years
+VT-RTF,Airbus A320-251N,Y186,11 Jan 2025,lsd,2.4 Years
+VT-RTG,Airbus A320-251N,Y186,13 Jan 2025,lsd,2.3 Years
+VT-RTH,Airbus A320-251N,Y186,14 Feb 2025,lsd,2.3 Years
+VT-RTI,Airbus A320-251N,Y186,11 Jan 2025,lsd,2.2 Years
+VT-RTO,Airbus A320-251N,Y186,12 Dec 2024,lsd,2.4 Years
+VT-RTP,Airbus A320-251N,Y186,12 Dec 2024,lsd,2.3 Years
+VT-RTQ,Airbus A320-251N,Y186,14 Dec 2024,lsd,2.4 Years
+VT-RTB,Airbus A321-251NX,Y232,19 Apr 2025,lsd,2.9 Years
+VT-RTC,Airbus A321-251NX,Y232,23 Apr 2025,lsd,3 Years
+VT-RTD,Airbus A321-251NX,Y232,9 Aug 2025,"lsd, ""Gota Patti"" tail",3 Years
+VT-RTE,Airbus A321-251NX,Y232,19 Apr 2025,lsd,2.9 Years
+VT-AXI,Boeing 737-8HG(WL),Y186,18 Dec 2006,"""Ragini Todi / Solah Shringar"" tail",19.2 Years
+VT-AXJ,Boeing 737-8HG(WL),Y186,9 Jan 2007,"""Red Fort / Gwalior Fort"" tail",19.2 Years
+VT-AXM,Boeing 737-8HG(WL),Y186,16 Jan 2007,"""Mehrangarh Fort Palace / Mysore Palace"" tail",19.2 Years
+VT-AXN,Boeing 737-8HG(WL),Y186,22 Jan 2007,"""Kochi-Muziris Biennale"" W tail",19.2 Years
+VT-AXP,Boeing 737-8HG(WL),Y186,14 Feb 2007,"""Hans Damayanti / Music"" tail",19.1 Years
+VT-AXQ,Boeing 737-8HG(WL),Y186,14 May 2007,"""Qutb Minar / Jantar Mantar"" tail",18.8 Years
+VT-AXR,Boeing 737-8HG(WL),Y186,13 Jul 2007,"""Chundan Vallam / Kalaripayattu"" tail",18.7 Years
+VT-AXT,Boeing 737-8HG(WL),Y186,26 Jul 2007,"""Peacock / Stork"" tail",18.7 Years
+VT-AXU,Boeing 737-8HG(WL),Y186,9 Oct 2007,"Parked / Maintenance, ""Garba Dance / Bihu Dance"" tail",18.5 Years
+VT-AXW,Boeing 737-8HG(WL),Y186,20 Jun 2008,"""Great Stupa / Charminar"" tail",17.8 Years
+VT-AXX,Boeing 737-8HG(WL),Y186,30 Jul 2008,"Parked / Maintenance, ""Beach / Himalayas"" tail",17.6 Years
+VT-AXZ,Boeing 737-8HG(WL),Y186,3 Feb 2009,"""Himalayan Peaks / Desert"" tail",17.1 Years
+VT-AYA,Boeing 737-8HG(WL),Y186,17 Apr 2009,"""Ellora Caves / Ajanta Caves"" tail",16.9 Years
+VT-AYB,Boeing 737-8HG(WL),Y186,28 Jul 2009,"""White Tiger / Spotted Deer"" tail",16.7 Years
+VT-AYC,Boeing 737-8HG(WL),Y186,29 Sep 2009,,16.4 Years
+VT-AYD,Boeing 737-8HG(WL),Y186,22 Dec 2009,"Parked / Maintenance, ""Nagaland Folk Dance / Manipuri Dance"" tail",16.2 Years
+VT-GHA,Boeing 737-86N(WL),Y189,22 Mar 2016,"lsd, ""Elephant / Camel"" tail",10 Years
+VT-GHB,Boeing 737-86N(WL),Y189,27 Apr 2016,"lsd, ""Rangoli / Kites"" tail",9.9 Years
+VT-GHC,Boeing 737-86N(WL),Y189,9 May 2016,"lsd, ""Sitar / Tabla"" tail",9.8 Years
+VT-GHD,Boeing 737-86N(WL),Y189,1 Sep 2016,"lsd, ""Samai / Diya"" tail",9.5 Years
+VT-GHE,Boeing 737-86N(WL),Y189,3 Oct 2016,"lsd, ""Kathakali / Bharatanatyam"" tail",9.4 Years
+VT-GHF,Boeing 737-86N(WL),Y189,7 Nov 2016,"lsd, ""Konark Sun Temple / Taj Mahal"" tail",9.3 Years
+VT-GHI,Boeing 737-86N(WL),Y189,23 Oct 2018,"lsd, ""Harmandir Sahib / Bhangra"" tail",7.4 Years
+VT-GHK,Boeing 737-86N(WL),Y189,13 Sep 2018,"lsd, ""Spices / Fishing"" tail",7.5 Years
+VT-TGG,Boeing 737-8AL(WL),Y186,4 Jan 2023,lsd,11.9 Years
+VT-TGH,Boeing 737-8AL(WL),Y186,31 Jan 2023,lsd,11.8 Years
+VT-BWA,Boeing 737-8 MAX,Y184,21 Aug 2024,"lsd, ""Mathura Sanjhi"" tail",6.7 Years
+VT-BWB,Boeing 737-8 MAX,Y184,11 Jun 2024,"lsd, ""Jaapi"" W tail",6.6 Years
+VT-BWC,Boeing 737-8 MAX,C8Y154,12 Jul 2024,"lsd, ""Bomkai"" W tail",6.8 Years
+VT-BWD,Boeing 737-8 MAX,Y189,28 Dec 2024,"""Tsüngkotepsü"" tail",6.9 Years
+VT-BWE,Boeing 737-8 MAX,Y184,16 Jul 2024,"lsd, ""Toda"" W tail",6.4 Years
+VT-BWF,Boeing 737-8 MAX,C8Y154,31 Jul 2024,"""Danka"" tail",3.9 Years
+VT-BWG,Boeing 737-8 MAX,C8Y154,11 Sep 2024,"lsd, ""Kashmiri Handknotted Carpet"" tail",7.1 Years
+VT-BWH,Boeing 737-8 MAX,Y184,10 Sep 2024,"lsd, ""Mata Ni Pachedi"" tail",6.3 Years
+VT-BWI,Boeing 737-8 MAX,C8Y168,12 Feb 2025,"lsd, 100th Aircraft"" sticker, ""Chittara"" tail",6.3 Years
+VT-BWJ,Boeing 737-8 MAX,C8Y154,21 Feb 2025,"lsd, ""Tangaliya Shawl"" W tail",6.4 Years
+VT-BWK,Boeing 737-8 MAX,CY178,16 Jan 2025,"lsd, ""Kashmiri Sozani"" tail",6.8 Years
+VT-BWL,Boeing 737-8 MAX,C4Y174,26 Feb 2025,"lsd, ""Khes"" W tail",6.9 Years
+VT-BWM,Boeing 737-8 MAX,C8Y168,22 Feb 2025,"lsd, ""Himroo"" W tail",6.8 Years
+VT-BWN,Boeing 737-8 MAX,C8Y168,26 Mar 2025,"lsd, ""Pipli"" W tail",6.8 Years
+VT-BWO,Boeing 737-8 MAX,C4Y174,17 Apr 2025,"""Akyobi"" tail",6.7 Years
+VT-BWP,Boeing 737-8 MAX,C4Y174,18 Apr 2025,"""Sanganeri Block Print"" tail",6.7 Years
+VT-BWQ,Boeing 737-8 MAX,Y184,29 May 2025,"""Rogan"" W tail",6.4 Years
+VT-BWR,Boeing 737-8 MAX,Y184,6 Aug 2024,"lsd, ""Chamba Rumal"" W tail",6.5 Years
+VT-BWS,Boeing 737-8 MAX,C4Y174,1 Jun 2025,"""Zardozi"" W tail",7 Years
+VT-BWT,Boeing 737-8 MAX,C4Y174,9 Apr 2025,"""Solapur Chaddar"" W tail",6.9 Years
+VT-BWU,Boeing 737-8 MAX,Y184,20 Aug 2024,"lsd, ""Kutch"" W tail",6.4 Years
+VT-BWV,Boeing 737-8 MAX,C8Y160,16 Jul 2025,"""Idu Mishmi"" tail",6.6 Years
+VT-BWW,Boeing 737-8 MAX,C4Y174,11 Apr 2025,"""Moirang Phee"" W tail",6.9 Years
+VT-BWX,Boeing 737-8 MAX,C4Y174,29 May 2025,"""Pochampally"" tail",6.9 Years
+VT-BXA,Boeing 737-8 MAX,C8Y168,22 Sep 2023,"lsd, ""Bandhani"" W tail",6.8 Years
+VT-BXB,Boeing 737-8 MAX,C8Y168,30 Nov 2023,"lsd, ""Phulkari"" W tail",6.5 Years
+VT-BXC,Boeing 737-8 MAX,C8Y168,28 Dec 2023,"lsd, ""Paisley"" W tail",6.9 Years
+VT-BXD,Boeing 737-8 MAX,C8Y168,27 Sep 2023,"lsd, ""Patola"" W tail",4.6 Years
+VT-BXE,Boeing 737-8 MAX,C8Y168,13 Dec 2023,"lsd, ""Kanjeevaram"" W tail",6.4 Years
+VT-BXF,Boeing 737-8 MAX,C8Y168,27 Jan 2024,"lsd, ""Warli"" W tail",4.2 Years
+VT-BXG,Boeing 737-8 MAX,C8Y168,20 Oct 2023,"lsd, ""Jamdani"" W tail",4.6 Years
+VT-BXH,Boeing 737-8 MAX,Y189,9 Dec 2023,"lsd, ""Kalamkari"" W tail",6.8 Years
+VT-BXI,Boeing 737-8 MAX,C4Y174,20 Dec 2023,"lsd, ""Gamosa"" W tail",6.6 Years
+VT-BXJ,Boeing 737-8 MAX,C4Y174,21 Dec 2023,"lsd, ""Banarasi"" W tail",6.3 Years
+VT-BXK,Boeing 737-8 MAX,C8Y168,21 Mar 2024,"lsd, ""Pattu"" tail",6.7 Years
+VT-BXL,Boeing 737-8 MAX,C8Y168,1 Mar 2024,"lsd, ""Ikat"" W tail",4.1 Years
+VT-BXM,Boeing 737-8 MAX,C8Y168,23 Apr 2024,"lsd, ""Kasavu"" W tail",6.6 Years
+VT-BXN,Boeing 737-8 MAX,C8Y168,8 Mar 2024,"lsd, ""Aipan"" W tail",6.6 Years
+VT-BXO,Boeing 737-8 MAX,C8Y168,19 Mar 2024,"lsd, ""Kasuti"" W tail",6.6 Years
+VT-BXP,Boeing 737-8 MAX,C8Y168,4 Apr 2024,"lsd, ""Madhubani"" W tail",6.5 Years
+VT-BXQ,Boeing 737-8 MAX,C8Y154,24 Jan 2024,"lsd, ""Bagh"" W tail",6.7 Years
+VT-BXR,Boeing 737-8 MAX,C8Y154,2 Feb 2024,"lsd, ""Jamawar"" W tail",6.6 Years
+VT-BXS,Boeing 737-8 MAX,C8Y154,30 Jan 2024,"lsd, ""Pichwai"" W tail",6.5 Years
+VT-BXT,Boeing 737-8 MAX,C8Y168,9 Jul 2024,"lsd, ""Chikankari"" W tail",6.6 Years
+VT-BXU,Boeing 737-8 MAX,C8Y168,24 May 2024,"lsd, ""Kantha"" W tail",6.6 Years
+VT-BXV,Boeing 737-8 MAX,C8Y168,23 May 2024,"lsd, ""Sohrai"" W tail",6.4 Years
+VT-BXW,Boeing 737-8 MAX,C8Y168,18 Jun 2024,"Parked / Maintenance, lsd, ""Puanchei"" tail",6.5 Years
+VT-BXX,Boeing 737-8 MAX,C8Y168,19 Jun 2024,"lsd, ""Khneng"" tail",6.5 Years
+VT-BXY,Boeing 737-8 MAX,C8Y168,28 Jun 2024,"lsd, ""Chanderi"" W tail",6.9 Years
+VT-BXZ,Boeing 737-8 MAX,C8Y168,26 Apr 2024,"lsd, ""Saphee Lanphee"" W tail",6.8 Years
+VT-RNT,Boeing 737-8 MAX,Y189,26 Dec 2025,"""Parsi Gara"" tail",0.3 Years
+VT-,Boeing 737-8 MAX,,On Order,,Brand new

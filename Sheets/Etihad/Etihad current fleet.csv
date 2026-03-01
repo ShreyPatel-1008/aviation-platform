@@ -1,0 +1,129 @@
+REG,AIRCRAFT TYPE,CONFIG,DELIVERED,REMARK,AGE
+A6-EIA,Airbus A320-232,C16Y120,29 Mar 2020,lsd,23.1 Years
+A6-EIB,Airbus A320-232,C8Y150,9 Jul 2025,,13.4 Years
+A6-EIH,Airbus A320-232,C16Y120,25 Nov 2008,lsd,17.3 Years
+A6-EII,Airbus A320-232,C16Y120,23 Dec 2016,lsd,17.3 Years
+A6-EIJ,Airbus A320-232,C8Y150,19 Dec 2025,lsd,16.8 Years
+A6-EIM,Airbus A320-232,C8Y150,4 Nov 2009,lsd,16.4 Years
+A6-EIN,Airbus A320-232,C8Y150,7 Dec 2009,lsd,16.3 Years
+A6-EIP,Airbus A320-232,C8Y150,1 Aug 2023,lsd,13.9 Years
+A6-EIS,Airbus A320-232(WL),C8Y150,22 Aug 2013,,12.6 Years
+A6-EIT,Airbus A320-232(WL),C8Y150,17 Oct 2013,,12.5 Years
+A6-EIU,Airbus A320-232(WL),C8Y150,25 Oct 2013,lsd,12.4 Years
+A6-EIV,Airbus A320-232(WL),C8Y150,16 Dec 2013,"Parked / Maintenance, lsd",12.3 Years
+A6-EIW,Airbus A320-232(WL),C8Y150,22 Jan 2014,,12.2 Years
+A6-EIX,Airbus A320-232(WL),C8Y150,24 Jun 2014,,11.8 Years
+A6-EIY,Airbus A320-232(WL),C8Y150,8 Sep 2014,,11.6 Years
+A6-EJA,Airbus A320-232(WL),C8Y150,23 Apr 2015,,11 Years
+A6-EJB,Airbus A320-251N,C8Y168,25 Nov 2024,"lsd, Chennai Super Kings W cs",5 Years
+A6-AEB,Airbus A321-231(WL),C8Y188,23 May 2014,lsd,11.8 Years
+A6-AEC,Airbus A321-231(WL),C8Y188,18 Jun 2014,lsd,11.7 Years
+A6-AED,Airbus A321-231(WL),C8Y188,11 Dec 2014,"Parked / Maintenance, lsd",11.3 Years
+A6-AEE,Airbus A321-231(WL),C8Y188,13 Apr 2015,lsd,10.9 Years
+A6-AEF,Airbus A321-231(WL),C8Y188,23 Apr 2015,lsd,10.9 Years
+A6-AEG,Airbus A321-231(WL),C8Y188,20 Aug 2015,lsd,10.6 Years
+A6-AEH,Airbus A321-231(WL),C8Y188,8 Sep 2015,lsd,10.5 Years
+A6-AEI,Airbus A321-231(WL),C8Y188,30 Oct 2015,lsd,10.4 Years
+A6-AEJ,Airbus A321-231(WL),C8Y188,16 Nov 2015,lsd,10.3 Years
+A6-AEN,Airbus A321-251N,C16Y182,22 Jul 2024,"lsd, 20 Years cs",7.8 Years
+A6-AEO,Airbus A321-251N,C16Y182,14 Jun 2024,lsd,7.6 Years
+A6-AEP,Airbus A321-251N,C16Y182,27 Jun 2024,lsd,7.6 Years
+A6-AEQ,Airbus A321-251N,C8Y200,30 May 2024,lsd,7.3 Years
+A6-AER,Airbus A321-251NX,C8Y215,2 Aug 2024,lsd,5.5 Years
+A6-AES,Airbus A321-251NX,C8Y215,9 May 2024,lsd,4.7 Years
+A6-LRA,Airbus A321-251NX,F2C14Y144,23 Jul 2025,lsd,0.7 Years
+A6-LRB,Airbus A321-251NX,F2C14Y144,28 Aug 2025,lsd,0.5 Years
+A6-LRC,Airbus A321-251NX,F2C14Y144,22 Sep 2025,lsd,0.5 Years
+A6-LRD,Airbus A321-251NX,F2C14Y144,15 Oct 2025,lsd,0.4 Years
+A6-LRE,Airbus A321-251NX,F2C14Y144,30 Sep 2025,lsd,0.4 Years
+A6-LRF,Airbus A321-251NX,F2C14Y144,12 Nov 2025,lsd,0.4 Years
+A6-LRG,Airbus A321-251NX,F2C14Y144,29 Oct 2025,lsd,0.4 Years
+A6-LRH,Airbus A321-251NX,F2C14Y144,24 Nov 2025,lsd,0.3 Years
+A6-LRI,Airbus A321-251NX,F2C14Y144,19 Nov 2025,lsd,0.3 Years
+A6-LRJ,Airbus A321-251NX,F2C14Y144,31 Dec 2025,lsd,0.2 Years
+A6-LRK,Airbus A321-251NX,F2C14Y144,26 Feb 2026,,Brand new
+A6-LRL,Airbus A321-251NX,F2C14Y144,On Order,,
+A6-,Airbus A321-251NX,F2C14Y144,On Order,,
+A6-XWA,Airbus A350-1041,C44Y327,15 Jul 2019,,6.8 Years
+A6-XWB,Airbus A350-1041,C44Y327,31 May 2019,,6.9 Years
+A6-XWC,Airbus A350-1041,C44Y327,29 Jul 2019,,6.7 Years
+A6-XWE,Airbus A350-1041,C44Y327,30 Sep 2019,,6.6 Years
+A6-XWF,Airbus A350-1041,C44Y327,25 May 2020,,5.9 Years
+A6-XWG,Airbus A350-1041,C44Y327,11 Apr 2025,,1 Years
+A6-XWH,Airbus A350-1041,C44Y327,17 Jul 2025,,0.7 Years
+A6-XWI,Airbus A350-1041,C44Y327,30 Aug 2025,,0.6 Years
+A6-XWJ,Airbus A350-1041,C44Y327,16 Oct 2025,,0.5 Years
+A6-XWL,Airbus A350-1041,C44Y327,19 Dec 2025,,0.3 Years
+A6-XWN,Airbus A350-1041,C44Y327,On Order,,Brand new
+A6-XWO,Airbus A350-1041,C44Y327,On Order,,
+A6-APB,Airbus A380-861,P2F9C70Y405,24 Apr 2015,Parked at LDE,11.5 Years
+A6-APC,Airbus A380-861,P2F9C70Y405,29 May 2015,"Parked at AUH, ADNOC - Choose the United Kingdom cs",11.3 Years
+A6-APD,Airbus A380-861,P2F9C70Y405,7 Aug 2015,,11.1 Years
+A6-APE,Airbus A380-861,P2F9C70Y405,19 Oct 2015,,10.8 Years
+A6-APF,Airbus A380-861,P2F9C70Y405,4 Mar 2016,,10.4 Years
+A6-APG,Airbus A380-861,P2F9C70Y405,12 Apr 2016,,10.3 Years
+A6-APH,Airbus A380-861,P2F9C70Y405,12 May 2016,,10.2 Years
+A6-API,Airbus A380-861,P2F9C70Y405,24 Mar 2017,Parked / Maintenance,9.3 Years
+A6-APJ,Airbus A380-861,P2F9C70Y405,24 May 2017,,9.2 Years
+A6-ETA,Boeing 777-3FXER,C28Y374,19 May 2023,lsd,20.3 Years
+A6-ETE,Boeing 777-3FXER,C28Y374,10 Nov 2023,lsd,20.1 Years
+A6-ETG,Boeing 777-3FXER,C40Y330,18 May 2011,lsd,14.9 Years
+A6-ETH,Boeing 777-3FXER,C40Y330,14 Sep 2011,lsd,14.5 Years
+A6-ETI,Boeing 777-3FXER,C40Y330,23 Jan 2012,"Parked / Maintenance, lsd",14.2 Years
+A6-ETJ,Boeing 777-3FXER,C40Y330,17 Feb 2012,lsd,14.1 Years
+A6-ETP,Boeing 777-3FXER,C40Y330,25 Jun 2013,lsd,12.8 Years
+A6-ETQ,Boeing 777-3FXER,C40Y330,26 Sep 2013,lsd,12.5 Years
+A6-ETS,Boeing 777-3FXER,F8C40Y280,16 Sep 2014,lsd,11.5 Years
+A6-DDB,Boeing 777-FFX,Cargo,30 Jan 2013,,13.1 Years
+A6-DDC,Boeing 777-FFX,Cargo,9 May 2013,,12.9 Years
+A6-DDD,Boeing 777-FFX,Cargo,25 Feb 2016,,10.1 Years
+A6-DDE,Boeing 777-FFX,Cargo,14 Mar 2016,,10 Years
+A6-DDF,Boeing 777-F,Cargo,19 Nov 2018,,7.4 Years
+N722GT,Boeing 777-F,Cargo,1 Nov 2025,lsf Atlas Air,0.8 Years
+A6-BLA,Boeing 787-9 Dreamliner,F8C28Y190,31 Dec 2014,,11.2 Years
+A6-BLB,Boeing 787-9 Dreamliner,F8C28Y190,26 Feb 2015,,11.1 Years
+A6-BLC,Boeing 787-9 Dreamliner,F8C28Y190,27 Jul 2015,,10.6 Years
+A6-BLD,Boeing 787-9 Dreamliner,F8C28Y190,5 Jun 2015,,10.8 Years
+A6-BLE,Boeing 787-9 Dreamliner,F8C28Y190,30 Jun 2015,,10.7 Years
+A6-BLF,Boeing 787-9 Dreamliner,C28Y262,26 Apr 2016,,9.9 Years
+A6-BLG,Boeing 787-9 Dreamliner,C28Y262,24 May 2016,,9.8 Years
+A6-BLH,Boeing 787-9 Dreamliner,C28Y262,22 Jul 2016,,9.6 Years
+A6-BLI,Boeing 787-9 Dreamliner,C28Y262,28 Jul 2016,lsd,9.6 Years
+A6-BLJ,Boeing 787-9 Dreamliner,C28Y262,14 Oct 2016,,9.4 Years
+A6-BLK,Boeing 787-9 Dreamliner,C28Y262,19 Jan 2017,lsd,9.1 Years
+A6-BLL,Boeing 787-9 Dreamliner,C28Y262,21 Feb 2017,"Parked / Maintenance, lsd",9.1 Years
+A6-BLM,Boeing 787-9 Dreamliner,C28Y262,18 May 2017,lsd,8.8 Years
+A6-BLN,Boeing 787-9 Dreamliner,C28Y262,13 Jun 2017,,8.7 Years
+A6-BLO,Boeing 787-9 Dreamliner,C28Y262,14 Jul 2017,,8.7 Years
+A6-BLP,Boeing 787-9 Dreamliner,C28Y262,20 Jul 2017,,8.6 Years
+A6-BLQ,Boeing 787-9 Dreamliner,C28Y262,20 Sep 2017,lsd,8.5 Years
+A6-BLR,Boeing 787-9 Dreamliner,C28Y262,18 Oct 2017,lsd,8.4 Years
+A6-BLS,Boeing 787-9 Dreamliner,C28Y262,15 Dec 2017,lsd,8.2 Years
+A6-BLT,Boeing 787-9 Dreamliner,C28Y262,24 Apr 2018,,7.9 Years
+A6-BLU,Boeing 787-9 Dreamliner,C28Y262,29 Aug 2018,,7.5 Years
+A6-BLV,Boeing 787-9 Dreamliner,C28Y262,21 Nov 2018,"lsd, Abu Dhabi Grand Prix cs",7.3 Years
+A6-BLW,Boeing 787-9 Dreamliner,C28Y262,31 Jan 2019,lsd,7.1 Years
+A6-BLX,Boeing 787-9 Dreamliner,C28Y262,11 Feb 2019,lsd,7.1 Years
+A6-BLY,Boeing 787-9 Dreamliner,C28Y262,15 Mar 2019,,7 Years
+A6-BLZ,Boeing 787-9 Dreamliner,C28Y262,19 Jun 2019,,6.7 Years
+A6-BNA,Boeing 787-9 Dreamliner,C28Y262,27 Jun 2019,,6.7 Years
+A6-BNB,Boeing 787-9 Dreamliner,C28Y262,11 Jul 2019,,6.7 Years
+A6-BNC,Boeing 787-9 Dreamliner,C28Y262,13 Sep 2019,,6.5 Years
+A6-BND,Boeing 787-9 Dreamliner,C28Y262,16 Oct 2019,"Manchester City F.C. W cs, ""Flying Champions around the World"" W sticker",6.4 Years
+A6-BNE,Boeing 787-9 Dreamliner,C32Y271,20 Feb 2024,,2.5 Years
+A6-BNF,Boeing 787-9 Dreamliner,C32Y271,21 Feb 2024,,2.3 Years
+A6-BNG,Boeing 787-9 Dreamliner,C32Y271,17 Feb 2024,,2.3 Years
+A6-BNH,Boeing 787-9 Dreamliner,C32Y271,3 Jun 2025,,0.8 Years
+A6-BNI,Boeing 787-9 Dreamliner,C32Y271,9 Jul 2025,,0.7 Years
+A6-BNJ,Boeing 787-9 Dreamliner,C32Y271,26 Jul 2025,,0.6 Years
+A6-BNK,Boeing 787-9 Dreamliner,C32Y271,18 Sep 2025,,0.5 Years
+A6-BMA,Boeing 787-10 Dreamliner,C32Y295,30 Oct 2018,Warner Bros. World Abu Dhabi W cs,7.5 Years
+A6-BMB,Boeing 787-10 Dreamliner,C32Y295,15 Nov 2018,,7.3 Years
+A6-BMC,Boeing 787-10 Dreamliner,C32Y295,6 Dec 2018,,7.3 Years
+A6-BMD,Boeing 787-10 Dreamliner,C32Y295,21 Dec 2018,,7.2 Years
+A6-BME,Boeing 787-10 Dreamliner,C32Y295,29 Jan 2019,,7.1 Years
+A6-BMF,Boeing 787-10 Dreamliner,C32Y295,20 May 2019,,6.8 Years
+A6-BMG,Boeing 787-10 Dreamliner,C32Y295,21 Nov 2019,,6.3 Years
+A6-BMH,Boeing 787-10 Dreamliner,C32Y295,21 Jan 2020,Greenliner cs,6.1 Years
+A6-BMI,Boeing 787-10 Dreamliner,C32Y295,14 Oct 2020,,5.6 Years
+A6-BMJ,Boeing 787-10 Dreamliner,C32Y295,12 Oct 2023,,5.2 Years

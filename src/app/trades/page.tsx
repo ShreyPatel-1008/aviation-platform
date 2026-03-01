@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import LoadingAnimation from '@/components/LoadingAnimation';
 
 interface Article {
     id: string;
@@ -76,12 +77,40 @@ export default function TradesPage() {
             <div className="search-section">
                 <form onSubmit={handleSearch} className="search-bar">
                     <span className="search-icon">🔍</span>
-                    <input
-                        type="text"
-                        placeholder="Search trades... (e.g., Airbus A320, fleet order, IndiGo)"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
+                    <div style={{ position: 'relative', flex: 1 }}>
+                        <input
+                            type="text"
+                            placeholder="Search trades... (e.g., Airbus A320, fleet order, IndiGo)"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            style={{ paddingRight: '32px' }}
+                        />
+                        {search.trim() !== '' && (
+                            <button
+                                type="button"
+                                onClick={() => { setSearch(''); setPage(1); }}
+                                style={{
+                                    position: 'absolute',
+                                    right: 8,
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    width: 18,
+                                    height: 18,
+                                    borderRadius: '999px',
+                                    border: 'none',
+                                    background: 'rgba(148,163,184,0.25)',
+                                    color: 'inherit',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    fontSize: '0.75rem',
+                                }}
+                            >
+                                ✕
+                            </button>
+                        )}
+                    </div>
                     <button type="submit" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>
                         Search
                     </button>
@@ -89,10 +118,7 @@ export default function TradesPage() {
             </div>
 
             {loading ? (
-                <div className="loading-container">
-                    <div className="loading-spinner" />
-                    <p>Loading trade news...</p>
-                </div>
+                <LoadingAnimation message="Loading trade news..." fullScreen />
             ) : articles.length > 0 ? (
                 <>
                     <div className="articles-grid">
